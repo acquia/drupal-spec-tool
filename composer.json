@@ -6,9 +6,15 @@
     "license": "GPL-2.0-only",
     "authors": [
         {
-            "name": "Travis Carden"
+            "name": "Acquia Engineering",
+            "homepage": "https://www.acquia.com",
+            "role": "Maintainer"
         }
     ],
+    "support": {
+        "issues": "https://github.com/acquia/drupal-spec-tool/issues",
+        "source": "https://github.com/acquia/drupal-spec-tool"
+    },
     "require": {
         "php": "^5.6|^7.0",
         "drupal/core": "^8.5.1",
