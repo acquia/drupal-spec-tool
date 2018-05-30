@@ -10,6 +10,8 @@ This project provides a tool for specifying Drupal architecture details and gene
 
 Copy [the current version of the Google sheet](https://docs.google.com/spreadsheets/d/1G2LnWLVcZczxjp2SQt7XNjMvdNonmcgjx7RhFm2nhMw/edit?usp=sharing) to your Google Drive.
 
+![Google Sheet Screenshot](resources/screenshot.png)
+
 ### Behat tests
 
 Assuming you already have [Behat installed](http://behat.org/en/latest/quick_start.html#installation) via [Composer](https://getcomposer.org/)...
