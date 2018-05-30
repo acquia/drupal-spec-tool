@@ -36,6 +36,10 @@ Assuming you already have [Behat installed](http://behat.org/en/latest/quick_sta
 
 1. Run Behat! If the tests pass, your application already matches the specification. If not, change one or the other according to your needs.
 
+## Usage
+
+Learn more about the features of the tool and best practices for using it in [the announcement blog post on the Acquia Developer Center](https://dev.acquia.com/blog/a-specification-tool-for-drupal-8-/30/05/2018/19606).
+
 ## Contribution
 
 Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).
