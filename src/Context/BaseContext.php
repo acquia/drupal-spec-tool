@@ -8,7 +8,7 @@ use Drupal\DrupalExtension\Context\RawDrupalContext;
 /**
  * Defines a base context implementation that most context classes will extend.
  */
-abstract class BaseContext extends RawDrupalContext implements Context {
+abstract class BaseContext extends RawDrupalContext {
 
   /**
    * Returns a "missing rows" label value for a given plural name.
