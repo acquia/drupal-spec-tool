@@ -33,6 +33,7 @@ Assuming you already have [Behat installed](http://behat.org/en/latest/quick_sta
             - Acquia\DrupalSpecTool\Context\AccessControlContext
             - Acquia\DrupalSpecTool\Context\ContentModelContext
             - Acquia\DrupalSpecTool\Context\MenuContext
+            - Acquia\DrupalSpecTool\Context\ViewsContext
     ```
 
 1. Create a [Behat feature](http://behat.org/en/latest/user_guide/features_scenarios.html) file for each generated feature on the "Behat" tab of the Google sheet (e.g., `content_model.feature`) and copy the Gherkin into it.
