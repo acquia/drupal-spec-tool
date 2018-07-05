@@ -6,7 +6,7 @@ use Behat\Gherkin\Node\TableNode;
 use TravisCarden\BehatTableComparison\TableEqualityAssertion;
 
 /**
- * Provides access control Behat step definitions.
+ * Provides menu Behat step definitions.
  */
 class MenuContext extends BaseContext {
 
