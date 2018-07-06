@@ -25,9 +25,16 @@ class ViewsContext extends BaseContext {
   private $entityTypeManager;
 
   /**
+   * The Views display manager.
+   *
+   * @var \Drupal\views\Plugin\ViewsPluginManager
+   */
+  private $viewsDisplayManager;
+
+  /**
    * The Views wizard manager.
    *
-   * @var \Drupal\views\Annotation\ViewsWizard
+   * @var \Drupal\views\Plugin\ViewsPluginManager
    */
   private $viewsWizardManager;
 
@@ -36,9 +43,11 @@ class ViewsContext extends BaseContext {
    */
   public function __construct() {
     $this->entityTypeManager = \Drupal::entityTypeManager();
+    $this->viewsDisplayManager = \Drupal::getContainer()
+      ->get('plugin.manager.views.display');
     $this->viewsWizardManager = \Drupal::getContainer()
       ->get('plugin.manager.views.wizard');
-    $this->baseTables = $this->getAllBaseTables();
+    $this->baseTables = $this->getBaseTables();
   }
 
   /**
@@ -50,11 +59,7 @@ class ViewsContext extends BaseContext {
    */
   public function assertViewsExist(TableNode $expected) {
     $views_info = [];
-    /** @var \Drupal\views\Entity\View $view */
-    $views = $this->entityTypeManager
-      ->getStorage('view')
-      ->loadMultiple();
-    foreach ($views as $id => $view) {
+    foreach ($this->getViews() as $id => $view) {
       $views_info[] = [
         $view->label(),
         $id,
@@ -80,13 +85,50 @@ class ViewsContext extends BaseContext {
   }
 
   /**
+   * Asserts the configuration of views displays.
+   *
+   * @Then exactly the following views displays should exist
+   *
+   * @throws \Exception
+   */
+  public function assertViewDisplaysExist(TableNode $expected) {
+    $displays_info = [];
+    foreach ($this->getViews() as $view) {
+      /** @var array $display */
+      foreach ($view->get('display') as $display) {
+        $definition = $this->viewsDisplayManager
+          ->getDefinition($display['display_plugin']);
+        $displays_info[] = [
+          $view->label(),
+          $display['display_title'],
+          $display['id'],
+          (string) $definition['title'],
+        ];
+      }
+    }
+    $actual = new TableNode($displays_info);
+
+    (new TableEqualityAssertion($expected, $actual))
+      ->expectHeader([
+        'View',
+        'Title',
+        'Machine name',
+        'Display plugin',
+      ])
+      ->ignoreRowOrder()
+      ->setMissingRowsLabel(self::missingRowsLabelFor('views'))
+      ->setUnexpectedRowsLabel(self::unexpectedRowsLabelFor('views'))
+      ->assert();
+  }
+
+  /**
    * Gets the list of Views base tables.
    *
    * @return array|string[]
    *   An array of base table human-readable labels keyed by the corresponding
    *   IDs.
    */
-  private function getAllBaseTables(): array {
+  private function getBaseTables(): array {
     $base_tables = [];
 
     /** @var array[] $wizard_plugins */
@@ -113,6 +155,22 @@ class ViewsContext extends BaseContext {
    */
   private function getBaseTableLabel($id) {
     return array_key_exists($id, $this->baseTables) ? $this->baseTables[$id] : $id;
+  }
+
+  /**
+   * Gets all defined view objects.
+   *
+   * @return \Drupal\views\Entity\View[]
+   *   Returns an array of view objects.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   */
+  private function getViews() {
+    /** @var \Drupal\views\Entity\View[] $views */
+    $views = $this->entityTypeManager
+      ->getStorage('view')
+      ->loadMultiple();
+    return $views;
   }
 
 }
