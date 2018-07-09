@@ -128,7 +128,7 @@ class ViewsContext extends BaseContext {
    *   An array of base table human-readable labels keyed by the corresponding
    *   IDs.
    */
-  private function getBaseTables(): array {
+  private function getBaseTables() {
     $base_tables = [];
 
     /** @var array[] $wizard_plugins */
