@@ -43,10 +43,8 @@ class ViewsContext extends BaseContext {
    */
   public function __construct() {
     $this->entityTypeManager = \Drupal::entityTypeManager();
-    $this->viewsDisplayManager = \Drupal::getContainer()
-      ->get('plugin.manager.views.display');
-    $this->viewsWizardManager = \Drupal::getContainer()
-      ->get('plugin.manager.views.wizard');
+    $this->viewsDisplayManager = \Drupal::service('plugin.manager.views.display');
+    $this->viewsWizardManager = \Drupal::service('plugin.manager.views.wizard');
     $this->baseTables = $this->getBaseTables();
   }
 
