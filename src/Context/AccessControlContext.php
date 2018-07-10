@@ -3,7 +3,6 @@
 namespace Acquia\DrupalSpecTool\Context;
 
 use Behat\Gherkin\Node\TableNode;
-use Drupal\user\Entity\Role;
 use TravisCarden\BehatTableComparison\TableEqualityAssertion;
 
 /**
@@ -12,17 +11,36 @@ use TravisCarden\BehatTableComparison\TableEqualityAssertion;
 class AccessControlContext extends BaseContext {
 
   /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  private $entityTypeManager;
+
+  /**
+   * Constructs a ContentModelContext.
+   */
+  public function __construct() {
+    $this->entityTypeManager = \Drupal::entityTypeManager();
+  }
+
+  /**
    * Asserts the configuration of roles.
    *
    * @Then exactly the following roles should exist
+   *
+   * @throws \Exception
    */
   public function assertRolesExist(TableNode $expected) {
-    $roles = [];
-    /** @var \Drupal\user\Entity\Role $role */
-    foreach (Role::loadMultiple() as $id => $role) {
-      $roles[] = [$role->label(), $id];
+    $role_info = [];
+    /** @var \Drupal\user\Entity\Role[] $roles */
+    $roles = $this->entityTypeManager
+      ->getStorage('user_role')
+      ->loadMultiple();
+    foreach ($roles as $id => $role) {
+      $role_info[] = [$role->label(), $id];
     }
-    $actual = new TableNode($roles);
+    $actual = new TableNode($role_info);
 
     (new TableEqualityAssertion($expected, $actual))
       ->expectHeader(['Name', 'Machine name'])
