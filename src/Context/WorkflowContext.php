@@ -11,13 +11,6 @@ use TravisCarden\BehatTableComparison\TableEqualityAssertion;
 class WorkflowContext extends ContextBase {
 
   /**
-   * The entity type manager.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  private $entityTypeManager;
-
-  /**
    * The workflow type plugin manager.
    *
    * @var \Drupal\workflows\WorkflowTypeManager
@@ -28,7 +21,7 @@ class WorkflowContext extends ContextBase {
    * Constructs a WorkflowContext.
    */
   public function __construct() {
-    $this->entityTypeManager = \Drupal::entityTypeManager();
+    parent::__construct();
     $this->workflowTypePluginManager = \Drupal::service('plugin.manager.workflows.type');
   }
 
@@ -149,7 +142,7 @@ class WorkflowContext extends ContextBase {
    */
   public function getWorkflows() {
     /** @var \Drupal\workflows\WorkflowInterface[] $workflows */
-    $workflows = $this->entityTypeManager
+    $workflows = $this->entityTypeManager()
       ->getStorage('workflow')
       ->loadMultiple();
     return $workflows;

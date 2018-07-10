@@ -11,20 +11,6 @@ use TravisCarden\BehatTableComparison\TableEqualityAssertion;
 class MenuContext extends ContextBase {
 
   /**
-   * The entity type manager.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  private $entityTypeManager;
-
-  /**
-   * Constructs a MenuContext.
-   */
-  public function __construct() {
-    $this->entityTypeManager = \Drupal::entityTypeManager();
-  }
-
-  /**
    * Asserts the configuration of menus.
    *
    * @Then exactly the following menus should exist
@@ -34,7 +20,7 @@ class MenuContext extends ContextBase {
   public function assertMenusExist(TableNode $expected) {
     $menu_info = [];
     /** @var \Drupal\system\Entity\Menu $menu */
-    $menus = $this->entityTypeManager
+    $menus = $this->entityTypeManager()
       ->getStorage('menu')
       ->loadMultiple();
     foreach ($menus as $id => $menu) {

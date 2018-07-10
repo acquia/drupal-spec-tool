@@ -14,13 +14,6 @@ use TravisCarden\BehatTableComparison\TableEqualityAssertion;
 class ContentModelContext extends ContextBase {
 
   /**
-   * The entity type manager.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  private $entityTypeManager;
-
-  /**
    * The config factory.
    *
    * @var \Drupal\Core\Config\ConfigFactoryInterface
@@ -45,7 +38,7 @@ class ContentModelContext extends ContextBase {
    * Constructs a ContentModelContext.
    */
   public function __construct() {
-    $this->entityTypeManager = \Drupal::entityTypeManager();
+    parent::__construct();
     $this->configFactory = \Drupal::configFactory();
     $this->fieldTypePluginManager = \Drupal::service('plugin.manager.field.field_type');
     $this->fieldWidgetPluginManager = \Drupal::service('plugin.manager.field.widget');
@@ -61,7 +54,7 @@ class ContentModelContext extends ContextBase {
   public function assertBundles(TableNode $expected) {
     $bundle_info = [];
     foreach ($this->getContentEntityTypes() as $entity_type) {
-      $bundles = $this->entityTypeManager
+      $bundles = $this->entityTypeManager()
         ->getStorage($entity_type->getBundleEntityType())
         ->loadMultiple();
       foreach ($bundles as $bundle) {
@@ -112,7 +105,7 @@ class ContentModelContext extends ContextBase {
   public function assertFields(TableNode $expected) {
     $fields = [];
     foreach ($this->getContentEntityTypes() as $entity_type) {
-      $bundles = $this->entityTypeManager
+      $bundles = $this->entityTypeManager()
         ->getStorage($entity_type->getBundleEntityType())
         ->loadMultiple();
       foreach ($bundles as $bundle) {
@@ -190,7 +183,7 @@ class ContentModelContext extends ContextBase {
     $entity_types = [];
     foreach ($ids as $id) {
       try {
-        $entity_types[] = $this->entityTypeManager->getDefinition($id);
+        $entity_types[] = $this->entityTypeManager()->getDefinition($id);
       }
       catch (PluginNotFoundException $e) {
         // A PluginNotFoundException here just means that the module providing

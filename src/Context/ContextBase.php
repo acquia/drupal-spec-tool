@@ -10,6 +10,30 @@ use Drupal\DrupalExtension\Context\RawDrupalContext;
 abstract class ContextBase extends RawDrupalContext {
 
   /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  private $entityTypeManager;
+
+  /**
+   * Constructs a ContextBase.
+   */
+  public function __construct() {
+    $this->entityTypeManager = \Drupal::entityTypeManager();
+  }
+
+  /**
+   * Gets the entity type manager.
+   *
+   * @return \Drupal\Core\Entity\EntityTypeManagerInterface
+   *   The entity type manager.
+   */
+  protected function entityTypeManager() {
+    return $this->entityTypeManager;
+  }
+
+  /**
    * Returns a "missing rows" label value for a given plural name.
    *
    * @param string $plural_name

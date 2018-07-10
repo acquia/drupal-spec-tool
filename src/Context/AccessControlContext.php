@@ -11,20 +11,6 @@ use TravisCarden\BehatTableComparison\TableEqualityAssertion;
 class AccessControlContext extends ContextBase {
 
   /**
-   * The entity type manager.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  private $entityTypeManager;
-
-  /**
-   * Constructs an AccessControlContext.
-   */
-  public function __construct() {
-    $this->entityTypeManager = \Drupal::entityTypeManager();
-  }
-
-  /**
    * Asserts the configuration of roles.
    *
    * @Then exactly the following roles should exist
@@ -34,7 +20,7 @@ class AccessControlContext extends ContextBase {
   public function assertRolesExist(TableNode $expected) {
     $role_info = [];
     /** @var \Drupal\user\Entity\Role[] $roles */
-    $roles = $this->entityTypeManager
+    $roles = $this->entityTypeManager()
       ->getStorage('user_role')
       ->loadMultiple();
     foreach ($roles as $id => $role) {
