@@ -140,7 +140,7 @@ class WorkflowContext extends ContextBase {
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    */
-  public function getWorkflows() {
+  private function getWorkflows() {
     /** @var \Drupal\workflows\WorkflowInterface[] $workflows */
     $workflows = $this->entityTypeManager()
       ->getStorage('workflow')
