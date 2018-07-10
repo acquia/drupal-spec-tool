@@ -18,7 +18,7 @@ class MenuContext extends BaseContext {
   private $entityTypeManager;
 
   /**
-   * Constructs a ContentModelContext.
+   * Constructs a MenuContext.
    */
   public function __construct() {
     $this->entityTypeManager = \Drupal::entityTypeManager();

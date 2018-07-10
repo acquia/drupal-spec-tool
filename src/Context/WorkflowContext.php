@@ -25,7 +25,7 @@ class WorkflowContext extends BaseContext {
   private $workflowTypePluginManager;
 
   /**
-   * Constructs a ContentModelContext.
+   * Constructs a WorkflowContext.
    */
   public function __construct() {
     $this->entityTypeManager = \Drupal::entityTypeManager();

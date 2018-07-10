@@ -18,7 +18,7 @@ class AccessControlContext extends BaseContext {
   private $entityTypeManager;
 
   /**
-   * Constructs a ContentModelContext.
+   * Constructs an AccessControlContext.
    */
   public function __construct() {
     $this->entityTypeManager = \Drupal::entityTypeManager();

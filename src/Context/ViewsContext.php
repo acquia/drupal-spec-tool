@@ -39,7 +39,7 @@ class ViewsContext extends BaseContext {
   private $viewsWizardManager;
 
   /**
-   * Constructs a ContentModelContext.
+   * Constructs a ViewsContext.
    */
   public function __construct() {
     $this->entityTypeManager = \Drupal::entityTypeManager();
