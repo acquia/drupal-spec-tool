@@ -8,7 +8,7 @@ use TravisCarden\BehatTableComparison\TableEqualityAssertion;
 /**
  * Provides content model Behat step definitions.
  */
-class WorkflowContext extends BaseContext {
+class WorkflowContext extends ContextBase {
 
   /**
    * The entity type manager.

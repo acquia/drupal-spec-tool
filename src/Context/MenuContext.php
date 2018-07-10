@@ -8,7 +8,7 @@ use TravisCarden\BehatTableComparison\TableEqualityAssertion;
 /**
  * Provides menu Behat step definitions.
  */
-class MenuContext extends BaseContext {
+class MenuContext extends ContextBase {
 
   /**
    * The entity type manager.

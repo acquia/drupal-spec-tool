@@ -2,39 +2,11 @@
 
 namespace Acquia\DrupalSpecTool\Context;
 
-use Drupal\DrupalExtension\Context\RawDrupalContext;
-
 /**
- * Defines a base context implementation that most context classes will extend.
+ * Defines a deprecated base context implementation.
+ *
+ * @deprecated v1.2 and will be removed before v2.0. Use
+ *   \Acquia\DrupalSpecTool\Context\ContextBase instead.
  */
-abstract class BaseContext extends RawDrupalContext {
-
-  /**
-   * Returns a "missing rows" label value for a given plural name.
-   *
-   * @param string $plural_name
-   *   The plural name for rows indicating what they signify, e.g., "bundles" or
-   *   "fields".
-   *
-   * @return string
-   *   The label value.
-   */
-  protected static function missingRowsLabelFor($plural_name) {
-    return sprintf('Missing %s (present in specification, absent from Drupal)', $plural_name);
-  }
-
-  /**
-   * Returns an "unexpected rows" label value for a given plural name.
-   *
-   * @param string $plural_name
-   *   The plural name for rows indicating what they signify, e.g., "bundles" or
-   *   "fields".
-   *
-   * @return string
-   *   The label value.
-   */
-  protected static function unexpectedRowsLabelFor($plural_name) {
-    return sprintf('Unexpected %s (present in Drupal, absent from specification)', $plural_name);
-  }
-
+abstract class BaseContext extends ContextBase {
 }

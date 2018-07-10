@@ -8,7 +8,7 @@ use TravisCarden\BehatTableComparison\TableEqualityAssertion;
 /**
  * Provides Views Behat step definitions.
  */
-class ViewsContext extends BaseContext {
+class ViewsContext extends ContextBase {
 
   /**
    * The list of Views base tables.

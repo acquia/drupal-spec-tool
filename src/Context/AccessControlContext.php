@@ -8,7 +8,7 @@ use TravisCarden\BehatTableComparison\TableEqualityAssertion;
 /**
  * Provides access control Behat step definitions.
  */
-class AccessControlContext extends BaseContext {
+class AccessControlContext extends ContextBase {
 
   /**
    * The entity type manager.

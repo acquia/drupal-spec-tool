@@ -11,7 +11,7 @@ use TravisCarden\BehatTableComparison\TableEqualityAssertion;
 /**
  * Provides content model Behat step definitions.
  */
-class ContentModelContext extends BaseContext {
+class ContentModelContext extends ContextBase {
 
   /**
    * The entity type manager.
