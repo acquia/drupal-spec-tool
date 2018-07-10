@@ -2,7 +2,6 @@
 
 namespace Acquia\DrupalSpecTool\Context;
 
-use Behat\Behat\Context\Context;
 use Drupal\DrupalExtension\Context\RawDrupalContext;
 
 /**
