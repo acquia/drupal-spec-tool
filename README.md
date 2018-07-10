@@ -32,6 +32,7 @@ Assuming you already have [Behat installed](http://behat.org/en/latest/quick_sta
           contexts:
             - Acquia\DrupalSpecTool\Context\AccessControlContext
             - Acquia\DrupalSpecTool\Context\ContentModelContext
+            - Acquia\DrupalSpecTool\Context\MediaContext
             - Acquia\DrupalSpecTool\Context\MenuContext
             - Acquia\DrupalSpecTool\Context\ViewsContext
             - Acquia\DrupalSpecTool\Context\WorkflowContext
