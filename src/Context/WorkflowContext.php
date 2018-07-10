@@ -11,18 +11,18 @@ use TravisCarden\BehatTableComparison\TableEqualityAssertion;
 class WorkflowContext extends ContextBase {
 
   /**
-   * The workflow type plugin manager.
+   * The workflow type manager.
    *
    * @var \Drupal\workflows\WorkflowTypeManager
    */
-  private $workflowTypePluginManager;
+  private $workflowTypeManager;
 
   /**
    * Constructs a WorkflowContext.
    */
   public function __construct() {
     parent::__construct();
-    $this->workflowTypePluginManager = \Drupal::service('plugin.manager.workflows.type');
+    $this->workflowTypeManager = \Drupal::service('plugin.manager.workflows.type');
   }
 
   /**

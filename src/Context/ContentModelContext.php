@@ -21,18 +21,18 @@ class ContentModelContext extends ContextBase {
   private $configFactory;
 
   /**
-   * The field type plugin manager.
+   * The field type manager.
    *
    * @var \Drupal\Core\Field\FieldTypePluginManagerInterface
    */
-  private $fieldTypePluginManager;
+  private $fieldTypeManager;
 
   /**
-   * The field widget plugin manager.
+   * The field widget manager.
    *
    * @var \Drupal\Component\Plugin\PluginManagerInterface
    */
-  private $fieldWidgetPluginManager;
+  private $fieldWidgetManager;
 
   /**
    * Constructs a ContentModelContext.
@@ -40,8 +40,8 @@ class ContentModelContext extends ContextBase {
   public function __construct() {
     parent::__construct();
     $this->configFactory = \Drupal::configFactory();
-    $this->fieldTypePluginManager = \Drupal::service('plugin.manager.field.field_type');
-    $this->fieldWidgetPluginManager = \Drupal::service('plugin.manager.field.widget');
+    $this->fieldTypeManager = \Drupal::service('plugin.manager.field.field_type');
+    $this->fieldWidgetManager = \Drupal::service('plugin.manager.field.widget');
   }
 
   /**
@@ -135,10 +135,10 @@ class ContentModelContext extends ContextBase {
             $bundle->label(),
             $field_config->getLabel(),
             $machine_name,
-            (string) $this->fieldTypePluginManager->getDefinition($field_config->getType())['label'],
+            (string) $this->fieldTypeManager->getDefinition($field_config->getType())['label'],
             $field_config->isRequired() ? 'Required' : '',
             $field_storage->getCardinality() === -1 ? 'Unlimited' : $field_storage->getCardinality(),
-            isset($form_components[$machine_name]['type']) ? (string) $this->fieldWidgetPluginManager->getDefinition($form_components[$machine_name]['type'])['label'] : '-- Disabled --',
+            isset($form_components[$machine_name]['type']) ? (string) $this->fieldWidgetManager->getDefinition($form_components[$machine_name]['type'])['label'] : '-- Disabled --',
             $field_config->isTranslatable() ? 'Translatable' : '',
             $field_config->getDescription(),
           ];
