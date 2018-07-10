@@ -18,13 +18,6 @@ class ViewsContext extends ContextBase {
   private $baseTables;
 
   /**
-   * The entity type manager.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  private $entityTypeManager;
-
-  /**
    * The Views display manager.
    *
    * @var \Drupal\views\Plugin\ViewsPluginManager
@@ -42,7 +35,7 @@ class ViewsContext extends ContextBase {
    * Constructs a ViewsContext.
    */
   public function __construct() {
-    $this->entityTypeManager = \Drupal::entityTypeManager();
+    parent::__construct();
     $this->viewsDisplayManager = \Drupal::service('plugin.manager.views.display');
     $this->viewsWizardManager = \Drupal::service('plugin.manager.views.wizard');
     $this->baseTables = $this->getBaseTables();
@@ -165,7 +158,7 @@ class ViewsContext extends ContextBase {
    */
   private function getViews() {
     /** @var \Drupal\views\Entity\View[] $views */
-    $views = $this->entityTypeManager
+    $views = $this->entityTypeManager()
       ->getStorage('view')
       ->loadMultiple();
     return $views;
