@@ -147,7 +147,7 @@ class ContentModelContext extends BaseContext {
             $field_storage->getCardinality() === -1 ? 'Unlimited' : $field_storage->getCardinality(),
             isset($form_components[$machine_name]['type']) ? (string) $this->fieldWidgetPluginManager->getDefinition($form_components[$machine_name]['type'])['label'] : '-- Disabled --',
             $field_config->isTranslatable() ? 'Translatable' : '',
-            $field_config->getDescription(),
+            trim($field_config->getDescription()),
           ];
         }
       }
