@@ -46,6 +46,10 @@ Assuming you already have [Behat installed](http://behat.org/en/latest/quick_sta
 
 Learn more about the features of the tool and best practices for using it in [the announcement blog post on the Acquia Developer Center](https://dev.acquia.com/blog/a-specification-tool-for-drupal-8-/30/05/2018/19606).
 
+## Known issues
+
+[See open bug reports in the issue queue.](https://github.com/acquia/drupal-spec-tool/labels/bug)
+
 ## Contribution
 
 Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).
