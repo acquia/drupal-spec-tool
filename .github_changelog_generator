@@ -1,0 +1,7 @@
+# GitHub Changelog Generator Parameters
+# https://github.com/github-changelog-generator/github-changelog-generator
+
+user=acquia
+project=drupal-spec-tool
+unreleased=true
+future-release=v2.0.0
