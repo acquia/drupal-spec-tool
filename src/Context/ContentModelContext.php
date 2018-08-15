@@ -131,7 +131,6 @@ class ContentModelContext extends ContextBase {
           $machine_name = $this->getFieldMachineNameFromConfigId($id);
           $field_storage = $field_config->getFieldStorageDefinition();
           $fields[] = [
-            $entity_type->getBundleLabel(),
             $bundle->label(),
             $field_config->getLabel(),
             $machine_name,
@@ -149,7 +148,6 @@ class ContentModelContext extends ContextBase {
 
     (new TableEqualityAssertion($expected, $actual))
       ->expectHeader([
-        'Type',
         'Bundle',
         'Field label',
         'Machine name',
