@@ -38,7 +38,7 @@ Assuming you already have [Behat installed](http://behat.org/en/latest/quick_sta
             - Acquia\DrupalSpecTool\Context\WorkflowContext
     ```
 
-1. Create a [Behat feature](http://behat.org/en/latest/user_guide/features_scenarios.html) file for each generated feature on the "Behat" tab of the Google sheet (e.g., `content_model.feature`) and copy the Gherkin into it.
+1. Create a [Behat feature](http://behat.org/en/latest/user_guide/features_scenarios.html) file for each generated feature on the "Behat" tab of the Google sheet (e.g., `content_model.feature`) and copy the Gherkin into it. This can be done manually or using the [composer drupal-spec-dump-gherkin composer command].
 
 1. Run Behat! If the tests pass, your application already matches the specification. If not, change one or the other according to your needs.
 
