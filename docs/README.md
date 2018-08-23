@@ -10,7 +10,7 @@ This project provides a tool for specifying Drupal architecture details and gene
 
 Copy [the current version of the Google sheet](https://docs.google.com/spreadsheets/d/1h-SieCV9Dtrj8F4bqMvsbcHwIibN30j2oR9FMRDFT-8/edit?usp=sharing) to your Google Drive.
 
-![Google Sheet Screenshot](docs/images/screenshot.png)
+![Google Sheet Screenshot](images/screenshot.png)
 
 ### Behat tests
 
@@ -52,7 +52,7 @@ Learn more about the features of the tool and best practices for using it in [th
 
 ## Contribution
 
-Contributions are welcome! See [CONTRIBUTING.md](docs/CONTRIBUTING.md).
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
