@@ -18,6 +18,8 @@ Assuming you already have [Behat installed](http://behat.org/en/latest/quick_sta
 
 1. Install the Behat contexts:
 
+    _Note: If you're using [BLT](https://github.com/acquia/blt) the Drupal Spec Tool is already included as part of `blt/composer.suggested.json`._
+
     ```bash
     composer require --dev acquia/drupal-spec-tool
     ```
