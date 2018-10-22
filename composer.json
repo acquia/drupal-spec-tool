@@ -20,6 +20,9 @@
         "drupal/drupal-extension": "^3.4",
         "traviscarden/behat-table-comparison": "^0.2.1"
     },
+    "suggest": {
+        "nickwilde1990/drupal-spec-tool-commands": "^1.0@RC"
+    },
     "config": {
         "sort-packages": true
     },
