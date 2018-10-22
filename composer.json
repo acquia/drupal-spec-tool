@@ -1,8 +1,11 @@
 {
     "name": "acquia/drupal-spec-tool",
-    "description": "A tool for specifying Drupal architecture details and generating automated tests for them",
     "type": "behat-extension",
-    "keywords": ["Drupal", "Behat"],
+    "description": "A tool for specifying Drupal architecture details and generating automated tests for them",
+    "keywords": [
+        "Drupal",
+        "Behat"
+    ],
     "license": "GPL-2.0-only",
     "authors": [
         {
@@ -11,30 +14,30 @@
             "role": "Maintainer"
         }
     ],
-    "support": {
-        "issues": "https://github.com/acquia/drupal-spec-tool/issues",
-        "source": "https://github.com/acquia/drupal-spec-tool"
-    },
     "require": {
-        "php": "^5.6|^7.0",
+        "php": "^5.6 || ^7.0",
         "drupal/core": "^8.5.1",
         "drupal/drupal-extension": "^3.4",
         "traviscarden/behat-table-comparison": "^0.2.1"
+    },
+    "config": {
+        "sort-packages": true
     },
     "autoload": {
         "psr-4": {
             "Acquia\\DrupalSpecTool\\": "src/"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "repositories": {
         "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         }
     },
-    "config": {
-        "sort-packages": true
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "support": {
+        "issues": "https://github.com/acquia/drupal-spec-tool/issues",
+        "source": "https://github.com/acquia/drupal-spec-tool"
     }
 }
