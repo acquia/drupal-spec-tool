@@ -1,0 +1,41 @@
+---
+language: php
+dist: trusty
+
+php: 7.1
+
+addons:
+  chrome: stable
+
+cache:
+  directories:
+    - "$HOME/.composer/cache"
+    - "$HOME/.drush/cache"
+
+branches:
+  only:
+    - master
+    - develop
+    - wip
+
+matrix:
+  include:
+    - name: "Static code analysis"
+      env: ORCA_FIXTURE=none
+    - name: "Isolated test w/ recommended package versions"
+      env: ORCA_FIXTURE=sut-only ORCA_PACKAGE_STABILITY=stable
+    - name: "Integrated test w/ recommended package versions"
+      env: ORCA_FIXTURE=standard ORCA_PACKAGE_STABILITY=stable
+    - name: "Isolated test w/ dev package versions"
+      env: ORCA_FIXTURE=sut-only ORCA_PACKAGE_STABILITY=dev
+    - name: "Integrated test w/ dev package versions"
+      env: ORCA_FIXTURE=standard ORCA_PACKAGE_STABILITY=dev
+  allow_failures:
+    - env: ORCA_FIXTURE=sut-only ORCA_PACKAGE_STABILITY=dev
+    - env: ORCA_FIXTURE=standard ORCA_PACKAGE_STABILITY=dev
+
+install:
+  - "git clone --depth 1 https://github.com/acquia/orca.git ../orca"
+  - "../orca/bin/travis/install 8.x-1.x"
+
+script: "../orca/bin/travis/script acquia/drupal-spec-tool"
