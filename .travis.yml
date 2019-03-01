@@ -36,6 +36,6 @@ matrix:
 
 install:
   - "git clone --depth 1 https://github.com/acquia/orca.git ../orca"
-  - "../orca/bin/travis/install 8.x-1.x"
+  - "../orca/bin/travis/install master"
 
 script: "../orca/bin/travis/script acquia/drupal-spec-tool"
