@@ -19,20 +19,19 @@ branches:
     - wip
 
 matrix:
+  fast_finish: true
   include:
-    - name: "Static code analysis"
-      env: ORCA_FIXTURE=none
-    - name: "Isolated test w/ recommended package versions"
-      env: ORCA_FIXTURE=sut-only ORCA_PACKAGE_STABILITY=stable
-    - name: "Integrated test w/ recommended package versions"
-      env: ORCA_FIXTURE=standard ORCA_PACKAGE_STABILITY=stable
-    - name: "Isolated test w/ dev package versions"
-      env: ORCA_FIXTURE=sut-only ORCA_PACKAGE_STABILITY=dev
-    - name: "Integrated test w/ dev package versions"
-      env: ORCA_FIXTURE=standard ORCA_PACKAGE_STABILITY=dev
+    - { name: "Static code analysis", env: ORCA_JOB=STATIC_CODE_ANALYSIS }
+    - { name: "Deprecated code scan w/ SUT", env: ORCA_JOB=DEPRECATED_CODE_SCAN_SUT }
+    - { name: "Deprecated code scan w/ dependencies", env: ORCA_JOB=DEPRECATED_CODE_SCAN_CONTRIB }
+    - { name: "Isolated test w/ recommended package versions", env: ORCA_JOB=ISOLATED_RECOMMENDED }
+    - { name: "Integrated test w/ recommended package versions", env: ORCA_JOB=INTEGRATED_RECOMMENDED }
+    - { name: "Isolated test w/ dev package versions", env: ORCA_JOB=ISOLATED_DEV }
+    - { name: "Integrated test w/ dev package versions", env: ORCA_JOB=INTEGRATED_DEV }
   allow_failures:
-    - env: ORCA_FIXTURE=sut-only ORCA_PACKAGE_STABILITY=dev
-    - env: ORCA_FIXTURE=standard ORCA_PACKAGE_STABILITY=dev
+    - env: ORCA_JOB=DEPRECATED_CODE_SCAN_CONTRIB
+    - env: ORCA_JOB=ISOLATED_DEV
+    - env: ORCA_JOB=INTEGRATED_DEV
 
 install:
   - "git clone --depth 1 https://github.com/acquia/orca.git ../orca"
