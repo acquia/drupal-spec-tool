@@ -1,6 +1,5 @@
 ---
 language: php
-dist: trusty
 
 php: 7.1
 
@@ -11,12 +10,18 @@ cache:
   directories:
     - "$HOME/.composer/cache"
     - "$HOME/.drush/cache"
+    - "$TMPDIR/phpstan/cache"
 
 branches:
   only:
     - master
     - develop
     - wip
+
+env:
+  global:
+    - ORCA_SUT_NAME=acquia/drupal-spec-tool
+    - ORCA_SUT_BRANCH=master
 
 matrix:
   fast_finish: true
@@ -28,14 +33,21 @@ matrix:
     - { name: "Integrated test w/ recommended package versions", env: ORCA_JOB=INTEGRATED_RECOMMENDED }
     - { name: "Isolated test w/ dev package versions", env: ORCA_JOB=ISOLATED_DEV }
     - { name: "Integrated test w/ dev package versions", env: ORCA_JOB=INTEGRATED_DEV }
+    - { name: "Previous minor version of Drupal core", env: ORCA_JOB=CORE_PREVIOUS }
+    - { name: "Next pre-release of Drupal core", env: ORCA_JOB=CORE_NEXT }
   allow_failures:
     - env: ORCA_JOB=DEPRECATED_CODE_SCAN_CONTRIB
-    - env: ORCA_JOB=INTEGRATED_RECOMMENDED
     - env: ORCA_JOB=ISOLATED_DEV
     - env: ORCA_JOB=INTEGRATED_DEV
+    - env: ORCA_JOB=CORE_PREVIOUS
+    - env: ORCA_JOB=CORE_NEXT
 
-install:
-  - "git clone --branch master --depth 1 https://github.com/acquia/orca.git ../orca"
-  - "../orca/bin/travis/install master"
+before_install:
+  - git clone --branch master --depth 1 https://github.com/acquia/orca.git ../orca
+  - ../orca/bin/travis/before_install.sh
 
-script: "../orca/bin/travis/script acquia/drupal-spec-tool"
+install: ../orca/bin/travis/install.sh
+
+script: ../orca/bin/travis/script.sh
+
+after_failure: ../orca/bin/travis/after_failure.sh
