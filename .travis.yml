@@ -39,7 +39,6 @@ matrix:
     - env: ORCA_JOB=DEPRECATED_CODE_SCAN_CONTRIB
     - env: ORCA_JOB=ISOLATED_DEV
     - env: ORCA_JOB=INTEGRATED_DEV
-    - env: ORCA_JOB=CORE_PREVIOUS
     - env: ORCA_JOB=CORE_NEXT
 
 before_install:
