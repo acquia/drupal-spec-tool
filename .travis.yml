@@ -49,6 +49,8 @@ before_install:
 
 install: ../orca/bin/travis/install.sh
 
+before_script: ../orca/bin/travis/before_script.sh
+
 script: ../orca/bin/travis/script.sh
 
 after_failure: ../orca/bin/travis/after_failure.sh
