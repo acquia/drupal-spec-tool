@@ -53,4 +53,10 @@ before_script: ../orca/bin/travis/before_script.sh
 
 script: ../orca/bin/travis/script.sh
 
+before_cache: ../orca/bin/travis/before_cache.sh
+
+after_success: ../orca/bin/travis/after_success.sh
+
 after_failure: ../orca/bin/travis/after_failure.sh
+
+after_script: ../orca/bin/travis/after_script.sh
