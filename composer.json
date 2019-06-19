@@ -35,13 +35,13 @@
         "branch-alias": {
             "dev-master": "v2.x-dev"
         },
-        "phpcodesniffer-search-depth": 4,
         "hooks": {
             "pre-commit": "vendor/bin/phpcs --cache=var/.phpcs-cache",
             "pre-push": "vendor/bin/phpcs",
             "post-install-cmd": "vendor/bin/cghooks add --ignore-lock",
             "post-update-cmd": "vendor/bin/cghooks update"
-        }
+        },
+        "phpcodesniffer-search-depth": 4
     },
     "autoload": {
         "psr-4": {
