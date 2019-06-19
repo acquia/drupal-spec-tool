@@ -1,2 +1,6 @@
 /.idea/
+/var/
 /vendor/
+!/**/.gitkeep
+/cghooks.lock
+/phpcs.xml

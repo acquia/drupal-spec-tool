@@ -16,9 +16,14 @@
     ],
     "require": {
         "php": "^5.6 || ^7.0",
+        "acquia/coding-standards": "^0.1.1",
         "drupal/core": "^8.5.1",
         "drupal/drupal-extension": "^3.4 || ^4.0",
         "traviscarden/behat-table-comparison": "^0.2.1"
+    },
+    "require-dev": {
+        "brainmaestro/composer-git-hooks": "^2.7",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0"
     },
     "suggest": {
         "nickwilde1990/drupal-spec-tool-commands": "^1.0@RC"
@@ -29,6 +34,13 @@
     "extra": {
         "branch-alias": {
             "dev-master": "v2.x-dev"
+        },
+        "phpcodesniffer-search-depth": 4,
+        "hooks": {
+            "pre-commit": "vendor/bin/phpcs --cache=var/.phpcs-cache",
+            "pre-push": "vendor/bin/phpcs",
+            "post-install-cmd": "vendor/bin/cghooks add --ignore-lock",
+            "post-update-cmd": "vendor/bin/cghooks update"
         }
     },
     "autoload": {
@@ -44,6 +56,11 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "scripts": {
+        "cghooks": "cghooks --ansi",
+        "phpcbf": "phpcbf",
+        "phpcs": "phpcs --cache=var/.phpcs-cache"
+    },
     "support": {
         "issues": "https://github.com/acquia/drupal-spec-tool/issues",
         "source": "https://github.com/acquia/drupal-spec-tool"
