@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d503060b86aeb11d297eeffbdc0d061",
+    "content-hash": "0cf8154984cd0d5824c92e4345076327",
     "packages": [
         {
             "name": "acquia/coding-standards",
