@@ -33,7 +33,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "v2.x-dev"
+            "dev-develop": "2.x-dev"
         },
         "hooks": {
             "pre-commit": "vendor/bin/phpcs --cache=var/.phpcs-cache",
