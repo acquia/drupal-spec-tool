@@ -16,12 +16,12 @@
     ],
     "require": {
         "php": "^5.6 || ^7.0",
-        "acquia/coding-standards": "^0.1.1",
         "drupal/core": "^8.5.1",
         "drupal/drupal-extension": "^3.4 || ^4.0",
         "traviscarden/behat-table-comparison": "^0.2.1"
     },
     "require-dev": {
+        "acquia/coding-standards": "^0.2.0",
         "brainmaestro/composer-git-hooks": "^2.7",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0"
     },
