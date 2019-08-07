@@ -10,7 +10,7 @@ cache:
   directories:
     - "$HOME/.composer/cache"
     - "$HOME/.drush/cache"
-    - "$TMPDIR/phpstan/cache"
+    - "${TMPDIR:-/tmp}/phpstan/cache"
 
 branches:
   only:
