@@ -1,4 +1,4 @@
-# Acquia Drupal Spec Tool
+# Drupal Spec Tool
 
 [![Packagist](https://img.shields.io/packagist/v/acquia/drupal-spec-tool.svg)](https://packagist.org/packages/acquia/drupal-spec-tool) [![Build Status](https://travis-ci.org/acquia/drupal-spec-tool.svg?branch=master)](https://travis-ci.org/acquia/drupal-spec-tool)
 
