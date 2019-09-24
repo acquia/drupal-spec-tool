@@ -1,0 +1,13 @@
+---
+acquia/drupal-spec-tool:
+  type: behat-extension
+
+acquia/lightning:
+  type: drupal-profile
+
+# Let Lightning manage its own components.
+drupal/lightning_api: ~
+drupal/lightning_core: ~
+drupal/lightning_layout: ~
+drupal/lightning_media: ~
+drupal/lightning_workflow: ~

@@ -28,6 +28,7 @@ env:
 matrix:
   fast_finish: true
   include:
+    # Standard ORCA jobs.
     - { name: "Static code analysis", env: ORCA_JOB=STATIC_CODE_ANALYSIS }
     - { name: "Deprecated code scan", env: ORCA_JOB=DEPRECATED_CODE_SCAN }
     - { name: "Isolated test w/ recommended package versions", env: ORCA_JOB=ISOLATED_RECOMMENDED }
@@ -36,13 +37,13 @@ matrix:
     - { name: "Isolated test w/ dev package versions", env: ORCA_JOB=ISOLATED_DEV }
     - { name: "Integrated test w/ dev package versions", env: ORCA_JOB=INTEGRATED_DEV }
     - { name: "Integrated test w/ dev package versions & next minor dev version of Drupal core", env: ORCA_JOB=CORE_NEXT }
+    # Custom job.
+    - { name: "Lightning/Spreadsheet/Behat integration test", env: ORCA_JOB=CUSTOM ORCA_CUSTOM_FIXTURE_INIT_ARGS="--profile=lightning" ORCA_CUSTOM_TESTS_RUN_ARGS="--sut-only --behat" ORCA_PACKAGES_CONFIG=../drupal-spec-tool/tests/packages.yml }
   allow_failures:
     - env: ORCA_JOB=DEPRECATED_CODE_SCAN_CONTRIB
     - env: ORCA_JOB=ISOLATED_DEV
     - env: ORCA_JOB=INTEGRATED_DEV
     - env: ORCA_JOB=CORE_NEXT
-    # Temporary allowances.
-    - env: ORCA_JOB=CORE_PREVIOUS
 
 before_install:
   - git clone --branch ${ORCA_VERSION} --depth 1 https://github.com/acquia/orca.git ../orca
@@ -52,7 +53,9 @@ install: ../orca/bin/travis/install.sh
 
 before_script: ../orca/bin/travis/before_script.sh
 
-script: ../orca/bin/travis/script.sh
+script:
+  - '[[ "$ORCA_JOB" != "CUSTOM" ]] || mv tests/behat.yml ./'
+  - ../orca/bin/travis/script.sh
 
 before_cache: ../orca/bin/travis/before_cache.sh
 
