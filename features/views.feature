@@ -32,8 +32,8 @@ Feature: Views
   Scenario: Views displays
     Then exactly the following views displays should exist
       | View                                  | Title               | Machine name       | Display plugin |
-      | Archive                               | Block               | block_1            | Block          |
       | Archive                               | Master              | default            | Master         |
+      | Archive                               | Block               | block_1            | Block          |
       | Archive                               | Page                | page_1             | Page           |
       | Contact messages                      | Master              | default            | Master         |
       | Contact messages                      | Page                | page_1             | Page           |
@@ -41,18 +41,18 @@ Feature: Views
       | Content                               | Page                | page_1             | Page           |
       | Custom block library                  | Master              | default            | Master         |
       | Custom block library                  | Page                | page_1             | Page           |
-      | Files                                 | File usage          | page_2             | Page           |
-      | Files                                 | Files overview      | page_1             | Page           |
       | Files                                 | Master              | default            | Master         |
-      | Frontpage                             | Feed                | feed_1             | Feed           |
+      | Files                                 | Files overview      | page_1             | Page           |
+      | Files                                 | File usage          | page_2             | Page           |
       | Frontpage                             | Master              | default            | Master         |
+      | Frontpage                             | Feed                | feed_1             | Feed           |
       | Frontpage                             | Page                | page_1             | Page           |
-      | Glossary                              | Attachment          | attachment_1       | Attachment     |
       | Glossary                              | Master              | default            | Master         |
+      | Glossary                              | Attachment          | attachment_1       | Attachment     |
       | Glossary                              | Page                | page_1             | Page           |
+      | Media                                 | Master              | default            | Master         |
       | Media                                 | Browser             | entity_browser_1   | Entity browser |
       | Media                                 | Image browser       | entity_browser_2   | Entity browser |
-      | Media                                 | Master              | default            | Master         |
       | Media                                 | Media               | media_page_list    | Page           |
       | Media library                         | Master              | default            | Master         |
       | Media library                         | Page                | page               | Page           |
@@ -72,14 +72,14 @@ Feature: Views
       | Moderation Dashboard Recently Created | Recently created    | block_1            | Block          |
       | People                                | Master              | default            | Master         |
       | People                                | Page                | page_1             | Page           |
-      | Recent content                        | Block               | block_1            | Block          |
       | Recent content                        | Master              | default            | Master         |
+      | Recent content                        | Block               | block_1            | Block          |
       | Redirect                              | Master              | default            | Master         |
       | Redirect                              | Page                | page_1             | Page           |
       | Search                                | Master              | default            | Master         |
       | Search                                | Page                | page               | Page           |
-      | Taxonomy term                         | Feed                | feed_1             | Feed           |
       | Taxonomy term                         | Master              | default            | Master         |
+      | Taxonomy term                         | Feed                | feed_1             | Feed           |
       | Taxonomy term                         | Page                | page_1             | Page           |
       | Watchdog                              | Master              | default            | Master         |
       | Watchdog                              | Page                | page               | Page           |
