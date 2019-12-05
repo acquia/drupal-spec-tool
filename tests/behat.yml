@@ -1,0 +1,33 @@
+---
+default:
+  suites:
+    default:
+      paths:
+        - vendor/acquia/drupal-spec-tool/features
+      contexts:
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Acquia\DrupalSpecTool\Context\AccessControlContext
+        - Acquia\DrupalSpecTool\Context\ContentModelContext
+        - Acquia\DrupalSpecTool\Context\MediaContext
+        - Acquia\DrupalSpecTool\Context\MenuContext
+        - Acquia\DrupalSpecTool\Context\ViewsContext
+        - Acquia\DrupalSpecTool\Context\WorkflowContext
+  extensions:
+    Behat\MinkExtension:
+      base_url: "http://127.0.0.1:8080"
+      goutte: ~
+      selenium2:
+        wd_host: "http://127.0.0.1:4444"
+        capabilities:
+          chrome:
+            switches:
+              - "--headless"
+              - "--disable-gpu"
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: drupal
+      drupal:
+        drupal_root: docroot
