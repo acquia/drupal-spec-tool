@@ -107,8 +107,8 @@ class ViewsContext extends ContextBase {
         'Display plugin',
       ])
       ->ignoreRowOrder()
-      ->setMissingRowsLabel(self::missingRowsLabelFor('views'))
-      ->setUnexpectedRowsLabel(self::unexpectedRowsLabelFor('views'))
+      ->setMissingRowsLabel(self::missingRowsLabelFor('views displays'))
+      ->setUnexpectedRowsLabel(self::unexpectedRowsLabelFor('views displays'))
       ->assert();
   }
 
