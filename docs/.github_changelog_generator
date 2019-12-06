@@ -4,4 +4,6 @@
 user=acquia
 project=drupal-spec-tool
 unreleased=true
-future-release=v2.0.0
+exclude-labels=dependencies,duplicate,question,invalid,wontfix,Duplicate,Question,Invalid,Wontfix,Meta: Exclude From Changelog
+future-release=v3.0.0
+release-branch=develop
