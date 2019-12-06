@@ -1,14 +1,14 @@
-# Acquia Drupal Spec Tool
+# Drupal Spec Tool
 
 [![Packagist](https://img.shields.io/packagist/v/acquia/drupal-spec-tool.svg)](https://packagist.org/packages/acquia/drupal-spec-tool) [![Build Status](https://travis-ci.org/acquia/drupal-spec-tool.svg?branch=master)](https://travis-ci.org/acquia/drupal-spec-tool)
 
-This project provides a tool for specifying Drupal architecture details and generating automated tests for them. It consists of 1) a Google Sheet for capturing specification and generating tests from it and 2) the Behat contexts that automate the generated tests.
+This project provides a tool for specifying Drupal architecture details and generating automated tests for them. It consists of 1) [a Google Sheet](#google-sheet) for capturing specification and generating tests from it and 2) the Behat contexts that automate the generated tests ([examples](../features)).
 
 ## Getting started
 
 ### Google sheet
 
-Copy [the current version of the Google sheet](https://docs.google.com/spreadsheets/d/1h-SieCV9Dtrj8F4bqMvsbcHwIibN30j2oR9FMRDFT-8/edit?usp=sharing) to your Google Drive.
+Copy [the current version of the Google sheet](https://docs.google.com/spreadsheets/d/1FC2HSsumZUMOr83rq8mmI8g9l8g_peI_pEBnc79-Rks/edit?usp=sharing) to your Google Drive.
 
 ![Google Sheet Screenshot](images/screenshot.png)
 
@@ -40,9 +40,16 @@ Assuming you already have [Behat installed](http://behat.org/en/latest/quick_sta
             - Acquia\DrupalSpecTool\Context\WorkflowContext
     ```
 
-1. Create a [Behat feature](http://behat.org/en/latest/user_guide/features_scenarios.html) file for each generated feature on the "Behat" tab of the Google sheet (e.g., `content_model.feature`) and copy the Gherkin into it. (See [Advanced](#advanced) below to automate this process.)
+1. Copy [the default feature files](../features) (representing the out-of-the-box configuration of Lightning) to your features directory. For example, given a [BLT](https://github.com/acquia/blt)-based project:
 
-1. Run Behat! If the tests pass, your application already matches the specification. If not, change one or the other according to your needs.
+    ```bash
+    mkdir tests/behat/features/drupal-spec-tool
+    cp vendor/acquia/drupal-spec-tool/features/* tests/behat/features/drupal-spec-tool/
+    ```
+
+1. As you change the specification, update the features to match using the generated Gherkin  on the "Behat" tab of the Google sheet. (See [Advanced](#advanced) below to automate this process.)
+
+1. Run Behat! If the tests pass, your application matches the specification. If not, change one or the other according to your needs.
 
 ## Usage
 

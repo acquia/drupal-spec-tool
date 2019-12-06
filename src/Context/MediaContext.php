@@ -11,13 +11,6 @@ use TravisCarden\BehatTableComparison\TableEqualityAssertion;
 class MediaContext extends ContextBase {
 
   /**
-   * The image effect manager.
-   *
-   * @var \Drupal\image\ImageEffectManager
-   */
-  private $imageEffectManager;
-
-  /**
    * The renderer.
    *
    * @var \Drupal\Core\Render\RendererInterface
@@ -29,7 +22,6 @@ class MediaContext extends ContextBase {
    */
   public function __construct() {
     parent::__construct();
-    $this->imageEffectManager = \Drupal::service('plugin.manager.image.effect');
     $this->renderer = \Drupal::service('renderer');
   }
 
@@ -56,8 +48,8 @@ class MediaContext extends ContextBase {
         'Machine name',
       ])
       ->ignoreRowOrder()
-      ->setMissingRowsLabel(self::missingRowsLabelFor('workflow'))
-      ->setUnexpectedRowsLabel(self::unexpectedRowsLabelFor('workflow'))
+      ->setMissingRowsLabel(self::missingRowsLabelFor('image style'))
+      ->setUnexpectedRowsLabel(self::unexpectedRowsLabelFor('image style'))
       ->assert();
   }
 
@@ -87,8 +79,9 @@ class MediaContext extends ContextBase {
         'Effect',
         'Summary',
       ])
-      ->setMissingRowsLabel(self::missingRowsLabelFor('workflow'))
-      ->setUnexpectedRowsLabel(self::unexpectedRowsLabelFor('workflow'))
+      ->ignoreRowOrder()
+      ->setMissingRowsLabel(self::missingRowsLabelFor('image effect'))
+      ->setUnexpectedRowsLabel(self::unexpectedRowsLabelFor('image effect'))
       ->assert();
   }
 

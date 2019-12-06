@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": "^5.6 || ^7.0",
-        "drupal/core": "^8.5.1",
+        "drupal/core": "^8.7.0",
         "drupal/drupal-extension": "^3.4 || ^4.0",
         "traviscarden/behat-table-comparison": "^0.2.1"
     },
@@ -33,7 +33,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-develop": "v2.x-dev"
+            "dev-develop": "v3.x-dev"
         },
         "hooks": {
             "pre-commit": "vendor/bin/phpcs --cache=var/.phpcs-cache",
