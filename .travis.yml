@@ -41,7 +41,6 @@ matrix:
     # Custom job.
     - { name: "Lightning/Spreadsheet/Behat integration test", env: ORCA_JOB=CUSTOM ORCA_CUSTOM_FIXTURE_INIT_ARGS="--profile=lightning" ORCA_CUSTOM_TESTS_RUN_ARGS="--sut-only --behat" ORCA_PACKAGES_CONFIG=../drupal-spec-tool/tests/packages.yml }
   allow_failures:
-    - env: ORCA_JOB=DEPRECATED_CODE_SCAN_CONTRIB
     - env: ORCA_JOB=ISOLATED_DEV
     - env: ORCA_JOB=INTEGRATED_DEV
     - env: ORCA_JOB=CORE_NEXT
