@@ -18,8 +18,6 @@ Assuming you already have [Behat installed](http://behat.org/en/latest/quick_sta
 
 1. Install the Behat contexts:
 
-    _Note: If you're using [BLT](https://github.com/acquia/blt) the Drupal Spec Tool is already included._
-
     ```bash
     composer require --dev acquia/drupal-spec-tool
     ```
@@ -44,7 +42,7 @@ Assuming you already have [Behat installed](http://behat.org/en/latest/quick_sta
 
     ```bash
     mkdir tests/behat/features/drupal-spec-tool
-    cp vendor/acquia/drupal-spec-tool/features/* tests/behat/features/drupal-spec-tool/
+    cp vendor/acquia/drupal-spec-tool/features/*.feature tests/behat/features/drupal-spec-tool/
     ```
 
 1. As you change the specification, update the features to match using the generated Gherkin  on the "Behat" tab of the Google sheet. (See [Advanced](#advanced) below to automate this process.)
