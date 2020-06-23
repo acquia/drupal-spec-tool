@@ -17,6 +17,7 @@ For project maintainers.
 1. In the new document, [get a shareable link](https://support.google.com/docs/answer/2494822) for use in the following steps.
 1. Update the link to "the current version of the Google sheet" in the [README](README.md).
 1. Send the document ID from the new link to the Acquia Professional Services, Operations team to update the Project Template.
+1. Update [the document overview screenshot](images/screenshot.png).
 1. In [.github_changelog_generator](.github_changelog_generator), set the value of `future-release` to the new release version number.
 1. Run `github_changelog_generator` from the root directory.
 1. Commit code changes and push to GitHub.
