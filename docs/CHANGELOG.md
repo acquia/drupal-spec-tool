@@ -1,5 +1,13 @@
 # Changelog
 
+## [v3.0.1](https://github.com/acquia/drupal-spec-tool/tree/v3.0.1) (2020-06-22)
+
+[Full Changelog](https://github.com/acquia/drupal-spec-tool/compare/v3.0.0...v3.0.1)
+
+**Implemented enhancements:**
+
+- Update image styles and effects for Lightning changes [\#43](https://github.com/acquia/drupal-spec-tool/issues/43)
+
 ## [v3.0.0](https://github.com/acquia/drupal-spec-tool/tree/v3.0.0) (2019-12-06)
 
 [Full Changelog](https://github.com/acquia/drupal-spec-tool/compare/v2.0.0...v3.0.0)
