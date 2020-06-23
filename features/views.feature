@@ -51,8 +51,7 @@ Feature: Views
       | Glossary                              | Attachment          | attachment_1       | Attachment     |
       | Glossary                              | Page                | page_1             | Page           |
       | Media                                 | Master              | default            | Master         |
-      | Media                                 | Browser             | entity_browser_1   | Entity browser |
-      | Media                                 | Image browser       | entity_browser_2   | Entity browser |
+      | Media                                 | Image browser       | entity_browser_1   | Entity browser |
       | Media                                 | Media               | media_page_list    | Page           |
       | Media library                         | Master              | default            | Master         |
       | Media library                         | Page                | page               | Page           |
