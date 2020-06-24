@@ -1,6 +1,14 @@
 # Changelog
 
-## [v3.0.1](https://github.com/acquia/drupal-spec-tool/tree/v3.0.1) (2020-06-22)
+## [4.0.0](https://github.com/acquia/drupal-spec-tool/tree/4.0.0) (2020-06-24)
+
+[Full Changelog](https://github.com/acquia/drupal-spec-tool/compare/v3.0.1...4.0.0)
+
+**Implemented enhancements:**
+
+- Create new version for Drupal 9 [\#44](https://github.com/acquia/drupal-spec-tool/issues/44)
+
+## [v3.0.1](https://github.com/acquia/drupal-spec-tool/tree/v3.0.1) (2020-06-23)
 
 [Full Changelog](https://github.com/acquia/drupal-spec-tool/compare/v3.0.0...v3.0.1)
 

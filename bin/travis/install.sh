@@ -15,10 +15,10 @@ cd "$(dirname "$0")" || exit 1; source _includes.sh
 [[ ! "$BEHAT" == "TRUE" ]] && exit
 
 # Create the fixture.
-orca fixture:init -f --sut=acquia/drupal-spec-tool --profile=lightning
+orca fixture:init -f --sut=acquia/drupal-spec-tool --core=~9 --profile=lightning --project-template=acquia/drupal-recommended-project
 
 cd "$ORCA_FIXTURE_DIR" || exit 1
 
-# Remove conflicting package and add Behat.
-composer remove --dev acquia/blt-require-dev
-composer require behat/behat
+# Delete some Lightning Behat files that cause errors and invalid test failures.
+# @todo Coordinate with the Lighthning team to fix this upstream.
+find docroot/modules/contrib/lightning_* -name \*.behat.inc -exec rm -rf {} \;
