@@ -14,6 +14,7 @@ Feature: Views
       | Files                                 | files                                  | Files             | Enabled  | Find and manage files.                                                                        |
       | Frontpage                             | frontpage                              | Content           | Enabled  | All content promoted to frontpage                                                             |
       | Glossary                              | glossary                               | Content           | Disabled | All content, by letter.                                                                       |
+      | Image Browser                         | image_browser                          | Media             | Enabled  |                                                                                               |
       | Media                                 | media                                  | Media             | Enabled  | Find and manage media.                                                                        |
       | Media library                         | media_library                          | Media             | Enabled  | Find and manage media.                                                                        |
       | Moderated content                     | moderated_content                      | Content revisions | Enabled  | Find and moderate content.                                                                    |
@@ -50,8 +51,9 @@ Feature: Views
       | Glossary                              | Master              | default            | Master         |
       | Glossary                              | Attachment          | attachment_1       | Attachment     |
       | Glossary                              | Page                | page_1             | Page           |
+      | Image Browser                         | Master              | default            | Master         |
+      | Image Browser                         | Entity browser      | entity_browser     | Entity browser |
       | Media                                 | Master              | default            | Master         |
-      | Media                                 | Image browser       | entity_browser_1   | Entity browser |
       | Media                                 | Media               | media_page_list    | Page           |
       | Media library                         | Master              | default            | Master         |
       | Media library                         | Page                | page               | Page           |
