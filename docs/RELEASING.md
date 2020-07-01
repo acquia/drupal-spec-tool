@@ -10,6 +10,7 @@ For project maintainers.
 1. For a new major version, update `extra.branch-alias.dev-develop` in [composer.json](../composer.json).
 1. In the [canonical (master) version of the spreadsheet](https://docs.google.com/spreadsheets/d/1GDNEzJe_rWdM3oG_kbBEH8r11Pcy4a1xJ1oglVBsZRE/edit)...
     1. Update the version number on the "Overview" tab next to "Based on the document template version:" to the new release version number.
+    1. [Name the version](https://support.google.com/docs/answer/190843) in the version history accordingly.
     1. [Make a copy](https://support.google.com/docs/answer/49114) of the document and...
         1. Name it "Drupal Spec Tool $VERSION (current)", e.g., "Drupal Spec Tool v2.0.0 (current)".
         1. Share it with the same people.
