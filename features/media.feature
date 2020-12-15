@@ -14,6 +14,7 @@ Feature: Media
       | Medium (220×220)                  | medium         |
       | Slick media                       | slick_media    |
       | Thumbnail (100×100)               | thumbnail      |
+      | Wide (1090)                       | wide           |
 
   Scenario: Image effects
     Then exactly the following image effects should exist
@@ -25,3 +26,4 @@ Feature: Media
       | Medium (220×220)                  | Scale          | 220×220                 |
       | Slick media                       | Scale and crop | 853×480                 |
       | Thumbnail (100×100)               | Scale          | 100×100                 |
+      | Wide (1090)                       | Scale          | width 1090              |
