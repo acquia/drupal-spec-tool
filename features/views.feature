@@ -12,7 +12,7 @@ Feature: Views
       | Content                               | content                                | Content           | Enabled  | Find and manage content.                                                                      |
       | Custom block library                  | block_content                          | Custom Block      | Enabled  | Find and manage custom blocks.                                                                |
       | Files                                 | files                                  | Files             | Enabled  | Find and manage files.                                                                        |
-      | Frontpage                             | frontpage                              | Content           | Enabled  | All content promoted to frontpage                                                             |
+      | Frontpage                             | frontpage                              | Content           | Enabled  | All content promoted to the front page.                                                       |
       | Glossary                              | glossary                               | Content           | Disabled | All content, by letter.                                                                       |
       | Image Browser                         | image_browser                          | Media             | Enabled  |                                                                                               |
       | Media                                 | media                                  | Media             | Enabled  | Find and manage media.                                                                        |
