@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.0.2](https://github.com/acquia/drupal-spec-tool/tree/4.0.2) (2020-12-15)
+
+[Full Changelog](https://github.com/acquia/drupal-spec-tool/compare/4.0.1...4.0.2)
+
+**Merged pull requests:**
+
+- Update default feature files for changes to Lightning [\#50](https://github.com/acquia/drupal-spec-tool/pull/50) ([TravisCarden](https://github.com/TravisCarden))
+
 ## [4.0.1](https://github.com/acquia/drupal-spec-tool/tree/4.0.1) (2020-07-01)
 
 [Full Changelog](https://github.com/acquia/drupal-spec-tool/compare/4.0.0...4.0.1)
