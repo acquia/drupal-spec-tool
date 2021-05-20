@@ -60,6 +60,35 @@ Learn more about the features of the tool and best practices for using it in [th
 
 You can supplement or override out-of-the-box behavior by extending and replacing the default context classes with your own, e.g.:
 
+```php
+<?php
+
+namespace AcmeCorp;
+
+class CustomContentModelContext extends Acquia\DrupalSpecTool\Context\ContentModelContext {
+
+    /**
+     * Override existing functionality.
+     *
+     * @Then exactly the following content entity type bundles should exist
+     */
+    public function assertBundles(TableNode $expected) {
+        // ...
+    }
+
+    /**
+     * Add new functionality.
+     *
+     * @Then something new should be true
+     */
+    public function assertSomethingNew(TableNode $expected) {
+        // ...
+    }
+
+}
+
+```
+
 ```diff
  # behat.yml
  default:
@@ -67,7 +96,7 @@ You can supplement or override out-of-the-box behavior by extending and replacin
      default:
        contexts:
 -        - Acquia\DrupalSpecTool\Context\ContentModelContext
-+        - AcmeCorp\MyContentModelContext
++        - AcmeCorp\CustomContentModelContext
 ```
 
 ## Automation
