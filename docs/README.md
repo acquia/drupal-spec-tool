@@ -60,44 +60,41 @@ Learn more about the features of the tool and best practices for using it in [th
 
 You can supplement or override out-of-the-box behavior by extending and replacing the default context classes with your own, e.g.:
 
-```php
-<?php
+   ```php
+   namespace AcmeCorp;
 
-namespace AcmeCorp;
+   class CustomContentModelContext extends Acquia\DrupalSpecTool\Context\ContentModelContext {
 
-class CustomContentModelContext extends Acquia\DrupalSpecTool\Context\ContentModelContext {
+     /**
+      * Override existing functionality.
+      *
+      * @Then exactly the following content entity type bundles should exist
+      */
+     public function assertBundles(TableNode $expected) {
+       // ...
+     }
 
-    /**
-     * Override existing functionality.
-     *
-     * @Then exactly the following content entity type bundles should exist
-     */
-    public function assertBundles(TableNode $expected) {
-        // ...
-    }
+     /**
+      * Add new functionality.
+      *
+      * @Then something new should be true
+      */
+     public function assertSomethingNew(TableNode $expected) {
+       // ...
+     }
 
-    /**
-     * Add new functionality.
-     *
-     * @Then something new should be true
-     */
-    public function assertSomethingNew(TableNode $expected) {
-        // ...
-    }
+   }
+   ```
 
-}
-
-```
-
-```diff
- # behat.yml
- default:
-   suites:
-     default:
-       contexts:
--        - Acquia\DrupalSpecTool\Context\ContentModelContext
-+        - AcmeCorp\CustomContentModelContext
-```
+   ```diff
+    # behat.yml
+    default:
+      suites:
+        default:
+          contexts:
+   -        - Acquia\DrupalSpecTool\Context\ContentModelContext
+   +        - AcmeCorp\CustomContentModelContext
+   ```
 
 ## Automation
 
