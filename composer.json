@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "php": "^7.3",
+        "php": "^7.3 || ^8.0",
         "drupal/core": "^9.0",
         "drupal/drupal-extension": "^3.4 || ^4.0",
         "traviscarden/behat-table-comparison": "^0.2.1"
