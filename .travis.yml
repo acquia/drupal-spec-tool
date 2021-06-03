@@ -63,8 +63,9 @@ jobs:
     # - { env: ORCA_JOB=INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV, name: "Integrated test on next major, latest minor dev Drupal core version" }
     - { env: ORCA_JOB=ISOLATED_UPGRADE_TEST_TO_NEXT_MAJOR_BETA_OR_LATER, name: "Isolated upgrade test to next major beta-or-later Drupal core version" }
     - { env: ORCA_JOB=ISOLATED_UPGRADE_TEST_TO_NEXT_MAJOR_DEV, name: "Isolated upgrade test to next major dev Drupal core version" }
-    # Custom job.
+    # Custom jobs.
     - { env: BEHAT=TRUE ORCA_PACKAGES_CONFIG=../drupal-spec-tool/config/packages.yml, name: "Lightning/Spreadsheet/Behat integration test" }
+    - { env: BEHAT=TRUE ORCA_PACKAGES_CONFIG=../drupal-spec-tool/config/packages.yml, php: "8.0", dist: focal, name: "Lightning/Spreadsheet/Behat integration test on PHP 8.0" }
   allow_failures:
     - env: ORCA_JOB=INTEGRATED_UPGRADE_TEST_TO_NEXT_MINOR_DEV
     - env: ORCA_JOB=LOOSE_DEPRECATED_CODE_SCAN
@@ -76,7 +77,7 @@ jobs:
     - env: ORCA_JOB=ISOLATED_UPGRADE_TEST_TO_NEXT_MAJOR_DEV
 
 before_install:
-  - composer create-project --no-dev acquia/orca ../orca "$ORCA_VERSION"
+  - composer create-project --no-dev --ignore-platform-req=php acquia/orca ../orca "$ORCA_VERSION"
   - ../orca/bin/travis/before_install.sh
 
 install:
