@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.1.0](https://github.com/acquia/drupal-spec-tool/tree/4.1.0) (2021-06-11)
+
+[Full Changelog](https://github.com/acquia/drupal-spec-tool/compare/4.0.2...4.1.0)
+
+**Implemented enhancements:**
+
+- Add PHP 8 Support [\#54](https://github.com/acquia/drupal-spec-tool/pull/54) ([TravisCarden](https://github.com/TravisCarden))
+
 ## [4.0.2](https://github.com/acquia/drupal-spec-tool/tree/4.0.2) (2020-12-15)
 
 [Full Changelog](https://github.com/acquia/drupal-spec-tool/compare/4.0.1...4.0.2)
