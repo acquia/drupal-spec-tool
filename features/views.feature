@@ -33,58 +33,58 @@ Feature: Views
   Scenario: Views displays
     Then exactly the following views displays should exist
       | View                                  | Title               | Machine name       | Display plugin |
-      | Archive                               | Master              | default            | Master         |
+      | Archive                               | Default             | default            | Default        |
       | Archive                               | Block               | block_1            | Block          |
       | Archive                               | Page                | page_1             | Page           |
-      | Contact messages                      | Master              | default            | Master         |
+      | Contact messages                      | Master              | default            | Default        |
       | Contact messages                      | Page                | page_1             | Page           |
-      | Content                               | Master              | default            | Master         |
+      | Content                               | Default             | default            | Default        |
       | Content                               | Page                | page_1             | Page           |
-      | Custom block library                  | Master              | default            | Master         |
+      | Custom block library                  | Default             | default            | Default        |
       | Custom block library                  | Page                | page_1             | Page           |
-      | Files                                 | Master              | default            | Master         |
+      | Files                                 | Default             | default            | Default        |
       | Files                                 | Files overview      | page_1             | Page           |
       | Files                                 | File usage          | page_2             | Page           |
-      | Frontpage                             | Master              | default            | Master         |
+      | Frontpage                             | Default             | default            | Default        |
       | Frontpage                             | Feed                | feed_1             | Feed           |
       | Frontpage                             | Page                | page_1             | Page           |
-      | Glossary                              | Master              | default            | Master         |
+      | Glossary                              | Default             | default            | Default        |
       | Glossary                              | Attachment          | attachment_1       | Attachment     |
       | Glossary                              | Page                | page_1             | Page           |
-      | Image Browser                         | Master              | default            | Master         |
+      | Image Browser                         | Master              | default            | Default        |
       | Image Browser                         | Entity browser      | entity_browser     | Entity browser |
-      | Media                                 | Master              | default            | Master         |
+      | Media                                 | Default             | default            | Default        |
       | Media                                 | Media               | media_page_list    | Page           |
-      | Media library                         | Master              | default            | Master         |
+      | Media library                         | Default             | default            | Default        |
       | Media library                         | Page                | page               | Page           |
       | Media library                         | Widget              | widget             | Page           |
       | Media library                         | Widget (table)      | widget_table       | Page           |
-      | Moderated content                     | Master              | default            | Master         |
+      | Moderated content                     | Default             | default            | Default        |
       | Moderated content                     | Moderated content   | moderated_content  | Page           |
       | Moderation Dashboard In Review        | In draft            | block_2            | Block          |
       | Moderation Dashboard In Review        | In review           | block_1            | Block          |
-      | Moderation Dashboard In Review        | Master              | default            | Master         |
+      | Moderation Dashboard In Review        | Master              | default            | Default        |
       | Moderation Dashboard In Review        | Your drafts         | block_3            | Block          |
-      | Moderation Dashboard Recent Changes   | Master              | default            | Master         |
+      | Moderation Dashboard Recent Changes   | Master              | default            | Default        |
       | Moderation Dashboard Recent Changes   | Recent Changes      | block_1            | Block          |
       | Moderation Dashboard Recent Changes   | Your activity       | block_2            | Block          |
       | Moderation Dashboard Recently Created | Content you created | block_2            | Block          |
-      | Moderation Dashboard Recently Created | Master              | default            | Master         |
+      | Moderation Dashboard Recently Created | Master              | default            | Default        |
       | Moderation Dashboard Recently Created | Recently created    | block_1            | Block          |
-      | People                                | Master              | default            | Master         |
+      | People                                | Default             | default            | Default        |
       | People                                | Page                | page_1             | Page           |
-      | Recent content                        | Master              | default            | Master         |
+      | Recent content                        | Default             | default            | Default        |
       | Recent content                        | Block               | block_1            | Block          |
-      | Redirect                              | Master              | default            | Master         |
+      | Redirect                              | Master              | default            | Default        |
       | Redirect                              | Page                | page_1             | Page           |
-      | Search                                | Master              | default            | Master         |
+      | Search                                | Master              | default            | Default        |
       | Search                                | Page                | page               | Page           |
-      | Taxonomy term                         | Master              | default            | Master         |
+      | Taxonomy term                         | Default             | default            | Default        |
       | Taxonomy term                         | Feed                | feed_1             | Feed           |
       | Taxonomy term                         | Page                | page_1             | Page           |
-      | Watchdog                              | Master              | default            | Master         |
+      | Watchdog                              | Default             | default            | Default        |
       | Watchdog                              | Page                | page               | Page           |
-      | Who's new                             | Master              | default            | Master         |
+      | Who's new                             | Default             | default            | Default        |
       | Who's new                             | Who's new           | block_1            | Block          |
-      | Who's online block                    | Master              | default            | Master         |
+      | Who's online block                    | Default             | default            | Default        |
       | Who's online block                    | Who's online        | who_s_online_block | Block          |
