@@ -21,7 +21,7 @@
         "traviscarden/behat-table-comparison": "^0.3"
     },
     "suggest": {
-        "nickwilde1990/drupal-spec-tool-commands": "^1.0@RC"
+        "nickwilde1990/drupal-spec-tool-commands": "Provides Composer commands to automate populate/update Gherkin files as defined with this tool"
     },
     "config": {
         "sort-packages": true
