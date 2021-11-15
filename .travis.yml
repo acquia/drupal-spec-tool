@@ -75,6 +75,8 @@ jobs:
     - env: ORCA_JOB=ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
     - env: ORCA_JOB=INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
     - env: ORCA_JOB=ISOLATED_UPGRADE_TEST_TO_NEXT_MAJOR_DEV
+    # Temporarily disabled due to service disruption.
+    - env: ORCA_JOB=INTEGRATED_TEST_ON_NEXT_MINOR
 
 before_install:
   - composer create-project --no-dev --ignore-platform-req=php acquia/orca ../orca "$ORCA_VERSION"
