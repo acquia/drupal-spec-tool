@@ -4,3 +4,7 @@
 !/**/.gitkeep
 /cghooks.lock
 /phpcs.xml
+.DS_Store
+ .idea/
+ .php_cache
+ vendor/
