@@ -44,7 +44,7 @@ Assuming you already have [Behat installed](http://behat.org/en/latest/quick_sta
 1. Copy [the default feature files](../features) (representing the out-of-the-box configuration of Lightning) to your features directory. For example, given a [BLT](https://github.com/acquia/blt)-based project:
 
     ```bash
-    mkdir tests/behat/features/drupal-spec-tool
+    mkdir -p tests/behat/features/drupal-spec-tool
     cp vendor/acquia/drupal-spec-tool/features/*.feature tests/behat/features/drupal-spec-tool/
     ```
 
