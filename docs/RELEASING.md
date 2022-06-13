@@ -18,17 +18,15 @@ For project maintainers.
 1. Update the link to "the current version of the Google sheet" in the [README](README.md).
 1. Send the document ID from the new link to the Acquia Professional Services, Operations team to update the Project Template.
 1. Update [the document overview screenshot](images/screenshot.png).
-1. In [.github_changelog_generator](../.github_changelog_generator), set the value of `future-release` to the new release version number.
-1. Run `github_changelog_generator` from the root directory.
 1. Cut a release using [Gitflow](https://github.com/nvie/gitflow).
 1. Push the release to GitHub along with the updated `develop` and `master` branches.
 1. [Create a release](https://help.github.com/articles/creating-releases/) on GitHub and...
     1. Set the tag version and release title both to the new release version number.
-    1. Use the following template for the description. See [v2.0.0](https://github.com/acquia/drupal-spec-tool/releases/tag/v2.0.0) for an example.
+    2. Press the "Generate release notes" button.
+    3. Prepend the description with the following (including the blank line).
         ```
         [Google Sheet]($URL)
 
-        $VERSION_DETAILS_FROM_CHANGELOG_DOT_MD
         ```
 1. Confirm that the [Packagist package](https://packagist.org/packages/acquia/drupal-spec-tool) detects the new version.
-1. Notify users as appropriate.
+1. Notify users as appropriate, e.g., Acquia Professional Services.
