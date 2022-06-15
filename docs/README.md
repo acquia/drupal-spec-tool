@@ -1,6 +1,6 @@
 # Drupal Spec Tool
 
-[![Packagist](https://img.shields.io/packagist/v/acquia/drupal-spec-tool.svg)](https://packagist.org/packages/acquia/drupal-spec-tool) [![Build Status](https://travis-ci.com/acquia/drupal-spec-tool.svg?branch=master)](https://travis-ci.com/acquia/drupal-spec-tool)
+[![Packagist](https://img.shields.io/packagist/v/acquia/drupal-spec-tool.svg)](https://packagist.org/packages/acquia/drupal-spec-tool) [![Build Status](https://app.travis-ci.com/acquia/drupal-spec-tool.svg?branch=develop)](https://app.travis-ci.com/acquia/drupal-spec-tool)
 
 This project provides a tool for specifying Drupal architecture details and generating automated tests for them. It consists of 1) [a Google Sheet](#google-sheet) for capturing specification and generating tests from it and 2) the Behat contexts that automate the generated tests ([examples](../features)).
 
@@ -8,10 +8,7 @@ This project provides a tool for specifying Drupal architecture details and gene
 
 ### Google sheet
 
-Copy the appropriate version of the Google sheet to your Google Drive:
-
-- [Google sheet for Drupal 9](https://docs.google.com/spreadsheets/d/1bp2-HFNThXbPYEWjPhQZWCQ31OUd68gdNrY_h20rKqA/edit?usp=sharing)
-- [Google sheet for Drupal 8](https://docs.google.com/spreadsheets/d/1FC2HSsumZUMOr83rq8mmI8g9l8g_peI_pEBnc79-Rks/edit?usp=sharing)
+Copy [the current Google sheet](https://docs.google.com/spreadsheets/d/1pVQNyE5Rqhdnzk-6dHN5nnH_FsGfjub2_bzQF5MewSs/edit?usp=sharing) to your Google Drive:
 
 ![Google Sheet Screenshot](images/screenshot.png)
 
@@ -44,7 +41,7 @@ Assuming you already have [Behat installed](http://behat.org/en/latest/quick_sta
 1. Copy [the default feature files](../features) (representing the out-of-the-box configuration of Lightning) to your features directory. For example, given a [BLT](https://github.com/acquia/blt)-based project:
 
     ```bash
-    mkdir tests/behat/features/drupal-spec-tool
+    mkdir -p tests/behat/features/drupal-spec-tool
     cp vendor/acquia/drupal-spec-tool/features/*.feature tests/behat/features/drupal-spec-tool/
     ```
 

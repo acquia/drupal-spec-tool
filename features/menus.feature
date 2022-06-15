@@ -10,5 +10,6 @@ Feature: Menus
       | Administration    | admin        | Administrative task links                |
       | Footer            | footer       | Site information links                   |
       | Main navigation   | main         | Site section links                       |
+      | Sidebar menu      | sidebar-menu |                                          |
       | Tools             | tools        | User tool links, often added by modules  |
       | User account menu | account      | Links related to the active user account |
