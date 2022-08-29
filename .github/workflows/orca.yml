@@ -55,13 +55,18 @@ jobs:
           # - INTEGRATED_UPGRADE_TEST_TO_NEXT_MINOR_DEV
           # - ISOLATED_UPGRADE_TEST_TO_NEXT_MAJOR_BETA_OR_LATER # Isolated upgrade test to next major beta-or-later Drupal core version.
           # - ISOLATED_UPGRADE_TEST_TO_NEXT_MAJOR_DEV # Isolated upgrade test to next major dev Drupal core version.
+          - ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
+          - INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
         php-version: [ "7.4" ]
         include:
           # Acquia CMS/Spreadsheet/Behat integration test.
           - orca-job: "INTEGRATED_TEST_ON_CURRENT"
             php-version: "7.4"
             behat: "TRUE"
-
+          - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
+            php-version: "8.1"
+          - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
+            php-version: "8.1"
     steps:
       - uses: actions/checkout@v2
 
