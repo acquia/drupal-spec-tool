@@ -32,23 +32,23 @@ jobs:
       matrix:
         orca-job:
           - STATIC_CODE_ANALYSIS # Static code analysis.
-          - INTEGRATED_TEST_ON_OLDEST_SUPPORTED # Integrated test on oldest supported Drupal core version.
-          - INTEGRATED_TEST_ON_LATEST_LTS # Integrated test on latest LTS Drupal core version.
-          - INTEGRATED_TEST_ON_PREVIOUS_MINOR # Integrated test on previous minor Drupal core version.
-          - INTEGRATED_UPGRADE_TEST_FROM_PREVIOUS_MINOR # Integrated upgrade test from previous minor.
-          - ISOLATED_TEST_ON_CURRENT # Isolated test on current Drupal core version.
+          # - INTEGRATED_TEST_ON_OLDEST_SUPPORTED # Integrated test on oldest supported Drupal core version.
+          # - INTEGRATED_TEST_ON_LATEST_LTS # Integrated test on latest LTS Drupal core version.
+          # - INTEGRATED_TEST_ON_PREVIOUS_MINOR # Integrated test on previous minor Drupal core version.
+          # - INTEGRATED_UPGRADE_TEST_FROM_PREVIOUS_MINOR # Integrated upgrade test from previous minor.
+          # - ISOLATED_TEST_ON_CURRENT # Isolated test on current Drupal core version.
           # This job customized below under "include".
           # - INTEGRATED_TEST_ON_CURRENT # Integrated test on current Drupal core version.
-          - ISOLATED_TEST_ON_CURRENT_DEV # Isolated test on current dev Drupal core version.
-          - INTEGRATED_TEST_ON_CURRENT_DEV # Integrated test on current dev Drupal core version.
-          - LOOSE_DEPRECATED_CODE_SCAN # Loose deprecated code scan.
-          - STRICT_DEPRECATED_CODE_SCAN # Strict deprecated code scan.
-          - DEPRECATED_CODE_SCAN_W_CONTRIB # Deprecated code scan w/ contrib.
-          - ISOLATED_TEST_ON_NEXT_MINOR # Isolated test on next minor Drupal core version.
-          - INTEGRATED_TEST_ON_NEXT_MINOR # Integrated test on next minor Drupal core version.
-          - ISOLATED_TEST_ON_NEXT_MINOR_DEV # Isolated test on next minor dev Drupal core version.
-          - INTEGRATED_TEST_ON_NEXT_MINOR_DEV # Integrated test on next minor dev Drupal core version.
-          - LOOSE_DEPRECATED_CODE_SCAN
+          # - ISOLATED_TEST_ON_CURRENT_DEV # Isolated test on current dev Drupal core version.
+          # - INTEGRATED_TEST_ON_CURRENT_DEV # Integrated test on current dev Drupal core version.
+          # - LOOSE_DEPRECATED_CODE_SCAN # Loose deprecated code scan.
+          # - STRICT_DEPRECATED_CODE_SCAN # Strict deprecated code scan.
+          # - DEPRECATED_CODE_SCAN_W_CONTRIB # Deprecated code scan w/ contrib.
+          # - ISOLATED_TEST_ON_NEXT_MINOR # Isolated test on next minor Drupal core version.
+          # - INTEGRATED_TEST_ON_NEXT_MINOR # Integrated test on next minor Drupal core version.
+          # - ISOLATED_TEST_ON_NEXT_MINOR_DEV # Isolated test on next minor dev Drupal core version.
+          # - INTEGRATED_TEST_ON_NEXT_MINOR_DEV # Integrated test on next minor dev Drupal core version.
+          # - LOOSE_DEPRECATED_CODE_SCAN
           # Upgrade tests are not yet implemented.
           # - INTEGRATED_UPGRADE_TEST_TO_NEXT_MINOR # Integrated upgrade test to next minor Drupal core version.
           # - INTEGRATED_UPGRADE_TEST_TO_NEXT_MINOR_DEV # Integrated upgrade test to next minor dev Drupal core version.
@@ -58,9 +58,9 @@ jobs:
         php-version: [ "8.1" ]
         include:
           # Acquia CMS/Spreadsheet/Behat integration test.
-          - orca-job: "INTEGRATED_TEST_ON_CURRENT"
-            php-version: "8.1"
-            behat: "TRUE"
+         # - orca-job: "INTEGRATED_TEST_ON_CURRENT"
+         #   php-version: "8.1"
+         #   behat: "TRUE"
           - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
             php-version: "8.1"
           - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
