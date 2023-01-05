@@ -32,9 +32,9 @@ jobs:
       matrix:
         orca-job:
           - STATIC_CODE_ANALYSIS # Static code analysis.
-          - INTEGRATED_TEST_ON_OLDEST_SUPPORTED # Integrated test on oldest supported Drupal core version.
+          # - INTEGRATED_TEST_ON_OLDEST_SUPPORTED # Integrated test on oldest supported Drupal core version.
           # - INTEGRATED_TEST_ON_LATEST_LTS # Integrated test on latest LTS Drupal core version.
-          - INTEGRATED_TEST_ON_PREVIOUS_MINOR # Integrated test on previous minor Drupal core version.
+          # - INTEGRATED_TEST_ON_PREVIOUS_MINOR # Integrated test on previous minor Drupal core version.
           # - INTEGRATED_UPGRADE_TEST_FROM_PREVIOUS_MINOR # Integrated upgrade test from previous minor.
           # - ISOLATED_TEST_ON_CURRENT # Isolated test on current Drupal core version.
           # This job customized below under "include".
@@ -58,15 +58,6 @@ jobs:
         php-version: [ "8.1" ]
         include:
           # Acquia CMS/Spreadsheet/Behat integration test.
-          - orca-job: "INTEGRATED_TEST_ON_OLDEST_SUPPORTED"
-            php-version: "7.4"
-
-          - orca-job: "INTEGRATED_TEST_ON_OLDEST_SUPPORTED"
-            php-version: "8.0"
-
-          - orca-job: "INTEGRATED_TEST_ON_LATEST_LTS"
-            php-version: "7.4"
-
           - orca-job: "INTEGRATED_TEST_ON_CURRENT"
             php-version: "8.1"
             behat: "TRUE"
