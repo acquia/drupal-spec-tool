@@ -39,7 +39,7 @@ Assuming you already have [Behat installed](http://behat.org/en/latest/quick_sta
             - Acquia\DrupalSpecTool\Context\WorkflowContext
     ```
 
-1. Copy [the default feature files](../features) (representing the out-of-the-box configuration of Lightning) to your features directory. For example, given a [BLT](https://github.com/acquia/blt)-based project:
+1. Copy [the default feature files](../features) (representing the out-of-the-box configuration of Lightning) to your features directory. For example, given a [BLT](https://github.com/acquia/blt-behat)-based project:
 
     ```bash
     mkdir -p tests/behat/features/drupal-spec-tool
