@@ -24,7 +24,7 @@ jobs:
     env:
       ORCA_SUT_NAME: acquia/drupal-spec-tool
       ORCA_SUT_BRANCH: master
-      ORCA_VERSION: 3.26.0
+      ORCA_VERSION: ^3
       ORCA_JOB: ${{ matrix.orca-job }}
       BEHAT: ${{ matrix.behat }}
 
