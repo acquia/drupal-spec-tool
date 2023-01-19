@@ -1,12 +1,12 @@
 {
     "name": "acquia/drupal-spec-tool",
-    "type": "behat-extension",
     "description": "A tool for specifying Drupal architecture details and generating automated tests for them",
+    "license": "GPL-2.0-only",
+    "type": "behat-extension",
     "keywords": [
         "Drupal",
         "Behat"
     ],
-    "license": "GPL-2.0-only",
     "authors": [
         {
             "name": "Acquia Engineering",
@@ -14,32 +14,32 @@
             "role": "Maintainer"
         }
     ],
+    "support": {
+        "issues": "https://github.com/acquia/drupal-spec-tool/issues",
+        "source": "https://github.com/acquia/drupal-spec-tool"
+    },
     "require": {
-        "php": "^7.3 || ^8.0",
-        "drupal/core": "^9.0",
-        "drupal/drupal-extension": "^3.4 || ^4.0",
+        "php": "^8.1",
+        "drupal/core": "^10.0.0-alpha1",
+        "drupal/drupal-extension": "dev-master",
         "traviscarden/behat-table-comparison": "^0.3"
     },
     "suggest": {
-        "nickwilde1990/drupal-spec-tool-commands": "Provides Composer commands to automate populate/update Gherkin files as defined with this tool"
+        "nickwilde1990/drupal-spec-tool-commands": "Provides Composer commands to automatically populate/update Gherkin files as defined with this tool"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Acquia\\DrupalSpecTool\\": "src/"
+        }
     },
     "config": {
         "sort-packages": true
     },
     "extra": {
         "branch-alias": {
-            "dev-develop": "5.x-dev"
+            "dev-develop": "6.x-dev"
         }
-    },
-    "autoload": {
-        "psr-4": {
-            "Acquia\\DrupalSpecTool\\": "src/"
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "support": {
-        "issues": "https://github.com/acquia/drupal-spec-tool/issues",
-        "source": "https://github.com/acquia/drupal-spec-tool"
     }
 }

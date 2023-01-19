@@ -1,6 +1,7 @@
 # Drupal Spec Tool
 
-[![Packagist](https://img.shields.io/packagist/v/acquia/drupal-spec-tool.svg)](https://packagist.org/packages/acquia/drupal-spec-tool) [![Build Status](https://app.travis-ci.com/acquia/drupal-spec-tool.svg?branch=develop)](https://app.travis-ci.com/acquia/drupal-spec-tool)
+[![Packagist](https://img.shields.io/packagist/v/acquia/drupal-spec-tool.svg)](https://packagist.org/packages/acquia/drupal-spec-tool)
+[![Tests](https://github.com/acquia/drupal-spec-tool/actions/workflows/orca.yml/badge.svg)](https://github.com/acquia/drupal-spec-tool/actions/workflows/orca.yml)
 
 This project provides a tool for specifying Drupal architecture details and generating automated tests for them. It consists of 1) [a Google Sheet](#google-sheet) for capturing specification and generating tests from it and 2) the Behat contexts that automate the generated tests ([examples](../features)).
 
@@ -38,7 +39,7 @@ Assuming you already have [Behat installed](http://behat.org/en/latest/quick_sta
             - Acquia\DrupalSpecTool\Context\WorkflowContext
     ```
 
-1. Copy [the default feature files](../features) (representing the out-of-the-box configuration of Lightning) to your features directory. For example, given a [BLT](https://github.com/acquia/blt)-based project:
+1. Copy [the default feature files](../features) (representing the out-of-the-box configuration of Lightning) to your features directory. For example, given a [BLT](https://github.com/acquia/blt-behat)-based project:
 
     ```bash
     mkdir -p tests/behat/features/drupal-spec-tool
