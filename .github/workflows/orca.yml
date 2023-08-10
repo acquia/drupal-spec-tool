@@ -27,6 +27,10 @@ jobs:
       ORCA_VERSION: ^4
       ORCA_JOB: ${{ matrix.orca-job }}
       BEHAT: ${{ matrix.behat }}
+      # Google env variables.
+      ORCA_GOOGLE_API_CLIENT_ID: ${{ secrets.ORCA_GOOGLE_API_CLIENT_ID }}
+      ORCA_GOOGLE_API_CLIENT_SECRET: ${{ secrets.ORCA_GOOGLE_API_CLIENT_SECRET }}
+      ORCA_GOOGLE_API_REFRESH_TOKEN: ${{ secrets.ORCA_GOOGLE_API_REFRESH_TOKEN }}
 
     strategy:
       matrix:
