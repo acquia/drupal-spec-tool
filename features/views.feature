@@ -21,6 +21,7 @@ Feature: Views
       | Media                                 | media                                  | Media             | Enabled  | Find and manage media.                                                                        |
       | Media library                         | media_library                          | Media             | Enabled  | Find and manage media.                                                                        |
       | Moderated content                     | moderated_content                      | Content revisions | Enabled  | Find and moderate content.                                                                    |
+      | Moderation Dashboard                  | moderation_dashboard                   | Users             | Enabled  |                                                                                               |
       | Moderation Dashboard In Review        | content_moderation_dashboard_in_review | Content revisions | Enabled  |                                                                                               |
       | Moderation Dashboard Recent Changes   | moderation_dashboard_recent_changes    | Content revisions | Enabled  |                                                                                               |
       | Moderation Dashboard Recently Created | moderation_dashboard_recently_created  | Content           | Enabled  |                                                                                               |
@@ -31,7 +32,9 @@ Feature: Views
       | Places (Fallback)                     | places_fallback                        | Content           | Enabled  |                                                                                               |
       | Recent content                        | content_recent                         | Content           | Enabled  | Recent content.                                                                               |
       | Redirect                              | redirect                               | Redirect          | Enabled  | List of redirects                                                                             |
-      | Scheduled content                     | scheduler_scheduled_content            | Content revisions | Enabled  | Find and manage scheduled content.                                                            |
+      | Scheduled Content                     | scheduler_scheduled_content            | Content revisions | Enabled  | Find and manage scheduled content.                                                            |
+      | Scheduled Media                       | scheduler_scheduled_media              | Media revisions   | Enabled  | Find and manage scheduled media.                                                              |
+      | Scheduled Taxonomy Terms              | scheduler_scheduled_taxonomy_term      | Taxonomy terms    | Enabled  | Find and manage scheduled taxonomy terms.                                                     |
       | Search                                | search                                 | Index Content     | Enabled  |                                                                                               |
       | Search Fallback                       | search_fallback                        | Content           | Enabled  |                                                                                               |
       | Taxonomy term                         | taxonomy_term                          | Content           | Enabled  | Content belonging to a certain taxonomy term.                                                 |
@@ -50,7 +53,7 @@ Feature: Views
       | Articles                              | Master              | default               | Default        |
       | Articles                              | Page                | page                  | Page           |
       | Articles (Fallback)                   | Master              | default               | Default        |
-      | Content                               | Master              | default               | Default        |
+      | Content                               | Default             | default               | Default        |
       | Content                               | Page                | page_1                | Page           |
       | Event Cards                           | Master              | default               | Default        |
       | Event Cards                           | Past Events         | past_events_block     | Block          |
@@ -75,6 +78,8 @@ Feature: Views
       | Media library                         | Widget (table)      | widget_table          | Page           |
       | Moderated content                     | Default             | default               | Default        |
       | Moderated content                     | Moderated content   | moderated_content     | Page           |
+      | Moderation Dashboard                  | Master              | default               | Default        |
+      | Moderation Dashboard                  | Page                | page_1                | Page           |
       | Moderation Dashboard In Review        | In draft            | block_2               | Block          |
       | Moderation Dashboard In Review        | In review           | block_1               | Block          |
       | Moderation Dashboard In Review        | Master              | default               | Default        |
@@ -97,9 +102,14 @@ Feature: Views
       | Recent content                        | Default             | default               | Default        |
       | Redirect                              | Master              | default               | Default        |
       | Redirect                              | Page                | page_1                | Page           |
-      | Scheduled content                     | Content Overview    | overview              | Page           |
-      | Scheduled content                     | Master              | default               | Default        |
-      | Scheduled content                     | User profile tab    | user_page             | Page           |
+      | Scheduled Content                     | Content Overview    | overview              | Page           |
+      | Scheduled Content                     | Master              | default               | Default        |
+      | Scheduled Content                     | User                | user_page             | Page           |
+      | Scheduled Media                       | Master              | default               | Default        |
+      | Scheduled Media                       | Media Overview      | overview              | Page           |
+      | Scheduled Media                       | User                | user_page             | Page           |
+      | Scheduled Taxonomy Terms              | Master              | default               | Default        |
+      | Scheduled Taxonomy Terms              | Taxonomy Terms      | overview              | Page           |
       | Search                                | Master              | default               | Default        |
       | Search                                | Page                | search                | Page           |
       | Search Fallback                       | Block               | search_fallback_block | Block          |
