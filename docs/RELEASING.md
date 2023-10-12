@@ -8,12 +8,12 @@ For project maintainers.
 1. [Rename](https://support.google.com/docs/answer/49114) the current version of the Google sheet (find the link in the [README](README.md)), replacing the word "current" with "old", e.g., "Drupal Spec Tool v1.0.0 (old)" and move it to the "Archive" folder.
 1. Choose a new release version number according to the [Semantic Versioning Specification](https://semver.org/) (e.g., v2.0.0) for use in the following steps.
 1. For a new major version, update `extra.branch-alias.dev-develop` in [composer.json](../composer.json).
-1. In the [canonical (master) version of the spreadsheet](https://docs.google.com/spreadsheets/d/1GDNEzJe_rWdM3oG_kbBEH8r11Pcy4a1xJ1oglVBsZRE/edit)...
+1. In the [canonical (main) version of the spreadsheet](https://docs.google.com/spreadsheets/d/1GDNEzJe_rWdM3oG_kbBEH8r11Pcy4a1xJ1oglVBsZRE/edit)...
     1. Update the version number on the "Overview" tab next to "Based on the document template version:" to the new release version number.
     1. [Name the version](https://support.google.com/docs/answer/190843) in the version history accordingly.
     1. [Make a copy](https://support.google.com/docs/answer/49114) of the document and...
         1. Name it "Drupal Spec Tool $VERSION (current)", e.g., "Drupal Spec Tool v2.0.0 (current)".
-        1. Share it with the same people.
+        1. Share it with the same people. Under "General access", set "Anyone with the link" to "Viewer".
 1. In the new document, [get a shareable link](https://support.google.com/docs/answer/2494822) for use in the following steps.
 1. Update the link to "the current version of the Google sheet" in the [README](README.md).
 1. Send the document ID from the new link to the Acquia Professional Services, Operations team to update the Project Template.

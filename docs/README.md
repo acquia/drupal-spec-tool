@@ -9,7 +9,7 @@ This project provides a tool for specifying Drupal architecture details and gene
 
 ### Google sheet
 
-Copy [the current Google sheet](https://docs.google.com/spreadsheets/d/1pVQNyE5Rqhdnzk-6dHN5nnH_FsGfjub2_bzQF5MewSs/edit?usp=sharing) to your Google Drive:
+Copy [the current Google sheet](https://docs.google.com/spreadsheets/d/1TU_vnglPzM1kiQXOI5jefHB-CpS7ojUGsETLSeOnz_o/edit?usp=sharing) to your Google Drive:
 
 ![Google Sheet Screenshot](images/screenshot.png)
 
@@ -94,9 +94,12 @@ You can supplement or override out-of-the-box behavior by extending and replacin
    +        - AcmeCorp\CustomContentModelContext
    ```
 
-## Automation
+## Supporting tools
 
-Automate test updates with [`nickwilde1990/drupal-spec-tool-commands`](https://packagist.org/packages/nickwilde1990/drupal-spec-tool-commands).
+The community has provided tools to build on the Drupal Spec Tool:
+
+- [Drupal Spec Tool Commands](https://packagist.org/packages/nickwilde1990/drupal-spec-tool-commands) - Provides commands to automatically update the Google Sheet to match an existing Drupal site. This is helpful for adding the Drupal Spec Tool on a pre-existing project.
+- [Drupal Entity Generator (DEG)](https://drupal-entity-generator.readthedocs.io/) - Automatically generates Drupal configuration based on the Google Sheet, i.e., goes "the other way" and updates your Drupal site to match your specification.
 
 ## Known issues
 

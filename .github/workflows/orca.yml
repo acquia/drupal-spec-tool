@@ -24,9 +24,13 @@ jobs:
     env:
       ORCA_SUT_NAME: acquia/drupal-spec-tool
       ORCA_SUT_BRANCH: master
-      ORCA_VERSION: ^3
+      ORCA_VERSION: ^4
       ORCA_JOB: ${{ matrix.orca-job }}
       BEHAT: ${{ matrix.behat }}
+      # Google env variables.
+      ORCA_GOOGLE_API_CLIENT_ID: ${{ secrets.ORCA_GOOGLE_API_CLIENT_ID }}
+      ORCA_GOOGLE_API_CLIENT_SECRET: ${{ secrets.ORCA_GOOGLE_API_CLIENT_SECRET }}
+      ORCA_GOOGLE_API_REFRESH_TOKEN: ${{ secrets.ORCA_GOOGLE_API_REFRESH_TOKEN }}
 
     strategy:
       matrix:
@@ -69,6 +73,11 @@ jobs:
             php-version: "8.1"
           - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
             php-version: "8.1"
+          # PHP 8.2 tests.
+          # - orca-job: INTEGRATED_TEST_ON_LATEST_LTS
+          #   php-version: "8.2"
+          # - orca-job: ISOLATED_TEST_ON_CURRENT
+          #   php-version: "8.2"
     steps:
       - uses: actions/checkout@v2
 
