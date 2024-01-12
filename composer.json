@@ -21,7 +21,7 @@
     "require": {
         "php": "^8.1",
         "drupal/core": "^10.0.0-alpha1",
-        "drupal/drupal-extension": "dev-master",
+        "drupal/drupal-extension": "dev-main",
         "traviscarden/behat-table-comparison": "^0.3"
     },
     "suggest": {
