@@ -24,7 +24,7 @@ jobs:
     env:
       ORCA_SUT_NAME: acquia/drupal-spec-tool
       ORCA_SUT_BRANCH: master
-      ORCA_VERSION: ^4
+      ORCA_VERSION: ${{ matrix.orca-version }}
       ORCA_JOB: ${{ matrix.orca-job }}
       BEHAT: ${{ matrix.behat }}
       # Google env variables.
@@ -35,7 +35,8 @@ jobs:
     strategy:
       matrix:
         orca-job:
-          - STATIC_CODE_ANALYSIS # Static code analysis.
+          - STATIC_CODE_ANALYSIS
+          - ISOLATED_TEST_ON_CURRENT # Static code analysis.
           # - INTEGRATED_TEST_ON_OLDEST_SUPPORTED # Integrated test on oldest supported Drupal core version.
           # - INTEGRATED_TEST_ON_LATEST_LTS # Integrated test on latest LTS Drupal core version.
           # - INTEGRATED_TEST_ON_PREVIOUS_MINOR # Integrated test on previous minor Drupal core version.
@@ -59,7 +60,8 @@ jobs:
           # - INTEGRATED_UPGRADE_TEST_TO_NEXT_MINOR_DEV
           # - ISOLATED_UPGRADE_TEST_TO_NEXT_MAJOR_BETA_OR_LATER # Isolated upgrade test to next major beta-or-later Drupal core version.
           # - ISOLATED_UPGRADE_TEST_TO_NEXT_MAJOR_DEV # Isolated upgrade test to next major dev Drupal core version.
-        php-version: [ "8.1" ]
+        php-version: [ "8.1", "8.3" ]
+        orca-version: [ "^4" ]
         include:
           # Acquia CMS/Spreadsheet/Behat integration test.
          # - orca-job: "INTEGRATED_TEST_ON_CURRENT"
@@ -73,11 +75,7 @@ jobs:
             php-version: "8.1"
           - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
             php-version: "8.1"
-          # PHP 8.2 tests.
-          - orca-job: INTEGRATED_TEST_ON_LATEST_LTS
-            php-version: "8.2"
-          - orca-job: ISOLATED_TEST_ON_CURRENT
-            php-version: "8.2"
+
     steps:
       - uses: actions/checkout@v2
 
