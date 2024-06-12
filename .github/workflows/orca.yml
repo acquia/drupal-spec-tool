@@ -19,7 +19,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     env:
       ORCA_SUT_NAME: acquia/drupal-spec-tool
@@ -36,7 +36,7 @@ jobs:
       matrix:
         orca-job:
           - STATIC_CODE_ANALYSIS
-          - ISOLATED_TEST_ON_CURRENT # Static code analysis.
+          - ISOLATED_TEST_ON_CURRENT
           # - INTEGRATED_TEST_ON_OLDEST_SUPPORTED # Integrated test on oldest supported Drupal core version.
           # - INTEGRATED_TEST_ON_LATEST_LTS # Integrated test on latest LTS Drupal core version.
           # - INTEGRATED_TEST_ON_PREVIOUS_MINOR # Integrated test on previous minor Drupal core version.
@@ -64,9 +64,10 @@ jobs:
         orca-version: [ "^4" ]
         include:
           # Acquia CMS/Spreadsheet/Behat integration test.
-         # - orca-job: "INTEGRATED_TEST_ON_CURRENT"
-         #   php-version: "8.1"
-         #   behat: "TRUE"
+          # - orca-job: "INTEGRATED_TEST_ON_CURRENT"
+          #   php-version: "8.1"
+          #   behat: "TRUE"
+
           - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
             php-version: "8.1"
           - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
@@ -75,6 +76,15 @@ jobs:
             php-version: "8.1"
           - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
             php-version: "8.1"
+
+          - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
+            php-version: "8.3"
+          - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
+            php-version: "8.3"
+          - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
+            php-version: "8.3"
+          - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
+            php-version: "8.3"
 
     steps:
       - uses: actions/checkout@v2
@@ -122,7 +132,7 @@ jobs:
 
   all-successful:
     runs-on: ubuntu-latest
-    needs: [build]
+    needs: [ build ]
     steps:
-    - name: All checks successful
-      run: echo "🎉"
+      - name: All checks successful
+        run: echo "🎉"
