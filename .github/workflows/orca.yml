@@ -68,15 +68,8 @@ jobs:
           #   php-version: "8.1"
           #   behat: "TRUE"
 
-          - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
+          - orca-job: INTEGRATED_TEST_ON_LATEST_EOL_MAJOR
             php-version: "8.1"
-          - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
-            php-version: "8.1"
-          - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
-            php-version: "8.1"
-          - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
-            php-version: "8.1"
-
           - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
             php-version: "8.3"
           - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
