@@ -9,7 +9,7 @@ This project provides a tool for specifying Drupal architecture details and gene
 
 ### Google sheet
 
-Copy [the current Google sheet](https://docs.google.com/spreadsheets/d/1TU_vnglPzM1kiQXOI5jefHB-CpS7ojUGsETLSeOnz_o/edit?usp=sharing) to your Google Drive:
+Copy [the current Google sheet](https://docs.google.com/spreadsheets/d/18MALDELw4E5WNFMKz6CUGmIkVde3O4LQC9Loda97XhU/edit?usp=sharing) to your Google Drive:
 
 ![Google Sheet Screenshot](images/screenshot.png)
 

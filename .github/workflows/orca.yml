@@ -67,7 +67,10 @@ jobs:
           # - orca-job: "INTEGRATED_TEST_ON_CURRENT"
           #   php-version: "8.1"
           #   behat: "TRUE"
-          
+
+          # This version of the Drupal Spec Tool only supports ^10.0.0-alpha1.
+          # - orca-job: INTEGRATED_TEST_ON_LATEST_EOL_MAJOR
+          #  php-version: "8.1"
           - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
             php-version: "8.3"
           - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
