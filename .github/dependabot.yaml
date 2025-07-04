@@ -1,0 +1,21 @@
+version: 2
+updates:
+  - package-ecosystem: "composer"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    pull-request-branch-name:
+      separator: "-"
+    groups:
+      composer-dependencies:
+        patterns:
+          - "*"
+    registries:
+      - jfrog
+
+registries:
+  jfrog:
+    type: composer-repository
+    url: https://jfrog.ais.acquia.io
+    username: github_dependabot_token
+    password: ${{secrets.JFROG_GITHUB_DEPENDABOT_TOKEN}}
