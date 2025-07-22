@@ -1,21 +1,21 @@
 version: 2
 updates:
-- package-ecosystem: composer
-  directory: /
-  schedule:
-    interval: weekly
-  pull-request-branch-name:
-    separator: "-"
-  groups:
-    composer-dependencies:
-      patterns:
-      - "*"
-  registries:
-  - jfrog
-  ignore:
-  - update-types:
-    - version-update:semver-major
-  - dependency-name: "*"
+  - package-ecosystem: composer
+    directory: /
+    schedule:
+      interval: weekly
+    pull-request-branch-name:
+      separator: "-"
+    groups:
+      composer-dependencies:
+        patterns:
+          - "*"
+    registries:
+      - jfrog
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
 registries:
   jfrog:
     type: composer-repository
