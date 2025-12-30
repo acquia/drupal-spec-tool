@@ -11,7 +11,7 @@ This project provides a tool for specifying Drupal architecture details and gene
 
 Copy [the current Google sheet](https://docs.google.com/spreadsheets/d/18MALDELw4E5WNFMKz6CUGmIkVde3O4LQC9Loda97XhU/edit?usp=sharing) to your Google Drive:
 
-![Google Sheet Screenshot](images/screenshot.png)
+![Google Sheet Screenshot](images/spreadsheet.png)
 
 ### Behat tests
 
@@ -49,6 +49,10 @@ Assuming you already have [Behat installed](http://behat.org/en/latest/quick_sta
 1. As you change the specification, update the features to match using the generated Gherkin  on the "Behat" tab of the Google sheet. (See [Advanced](#advanced) below to automate this process.)
 
 1. Run Behat! If the tests pass, your application matches the specification. If not, change one or the other according to your needs.
+
+### Diagrams
+
+Diagrams aren't, strictly speaking, a feature of this package--which is focused on the Behat integration--but it's convenient to document them here. See [Diagrams](diagrams.md).
 
 ## Usage
 
